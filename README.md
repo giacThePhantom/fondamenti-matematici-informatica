@@ -1,5 +1,5 @@
 # Fondamenti matematici per l'informatica
-Riassunto di slide e appunti del corso di calcolatori del professor Ghiloni di uniTN (2018-2019)
+Riassunto di slide e appunti del corso di Fondamenti matematici per l'informatica del professor Ghiloni di uniTN (2018-2019)
 
 ## Struttura dei file
 Il file latex Principal.tex deve contenere unicamente input al prefisso e ai capitoli i quali conterranno tutti i contenuti. Il
