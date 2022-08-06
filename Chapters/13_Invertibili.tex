@@ -1,0 +1,34 @@
+\chapter{Invertibilit\`a in modulo n}
+\subsubsection{Definizione}
+Sia $a\in\mathbb{Z}$, si dir\`a che $a$ \`e invertibile modulo $n$ se esiste $x\in\mathbb{Z}$ tale che $ax\equiv 1\mod n$ in $\mathbb{Z}_{/n\mathbb{Z}}$. Il tale $x$ si dice
+inverso di $a$ modulo $n$. 
+\subsection{Condizione di invertibilit\`a}
+$a$ \`e invertibile in modulo $n$ se e solo se $(a,n)=1$.
+\subsubsection{Dimostrazione}
+Se $a$ \`e invertibile e $x$ \`e il suo inverso allora $n|(ax-1)$, pertanto esiste $k\in\mathbb{Z}$ tale che $nk=ax-1$, pertanto $1=nk-ax$, da cui, come visto precedentemente
+$1=(a,n)$. Viceversa se $1=(a,n)$ allora esistono $\alpha,\beta \in\mathbb{Z}$ tali che $1=\alpha a+n\beta$, da cui $\alpha a\equiv 1\mod n$.
+\subsection{Unicit\`a dell'inverso}
+Siano $x, y$ due inversi di $a$ modulo $n$, allora $x=y$ in $\mathbb{Z}_{/n\mathbb{Z}}$.
+\subsubsection{Dimostrazione}
+Dal fatto che $ax=1$ in $\mathbb{Z}_{/n\mathbb{Z}}$, moltiplicando entrambi i membri per $y$ ed usando la propriet\`a associativa e commutativa si ottiene:
+$[y]_n=[1]_n[y]_n=([a]_n[x]_n)[y]_n=[x]_n([a]_n[y]_n=[1]_n[x]_n=[x]_n$.
+\subsection{Unicit\`a dell'invertibile}
+Sia $a$ invertibile modulo $n$ e sia $a'=a$ in $\mathbb{Z}_{/n\mathbb{Z}}$, allora anche $a'$ \`e invertibile e ha lo stesso inverso di $a$. 
+\subsubsection{Dimostrazione}
+Se $ax=1$ in $\mathbb{Z}_{/n\mathbb{Z}}$ allora $m|(ax-1)$, se $a'=a$ in $\mathbb{Z}_{/n\mathbb{Z}}$ allora esiste $k$ tale che $a'=a+kn$, allora $a'x-1=ax-1+knx$ \`e divisibile
+per $n$ e $a'x=1$ in $\mathbb{Z}_{/n\mathbb{Z}}$.
+\subsection{Osservazioni}
+\begin{enumerate}
+\item Si osservi che le due proposizioni precedenti permettono di definire l'invertibilit\`a e l'inverso di una classe di congruenza: data una classe $[a]_n$, se $a$ \`e 
+invertibile, per la seconda delle due proposizioni l'insieme dei suoi inversi costituisce una classe di congruenza che dipende da $[a]_n$ e non da $a$, la classe costituita 
+dagli inversi di $a$ viene chiamata inverso di $[a]_n$ e viene denotata come $[a]_n^{-1}$. 
+\item La definizione di inverso di una classe di congruenza ne garantisce l'unicit\`a: \`e l'unica tale che $[a]_n[a]_n^{-1}=[1]_n$. Questo fatto pu\`o essere provato 
+utilizzandole propriet\`a formali delle operazioni. Si supponga che $u\in\mathbb{Z}_{/n\mathbb{Z}}$ e che esistano $v_1,v_2$ tali che $uv_1=v_1u=1$ e $uv_2=v_2u=1$, allora
+$v_1=1v_1=uv_2v_1=1v_2=v_2$.
+\end{enumerate}
+\subsection{Condizione di invertibilit\`a per classi di congruenza}
+$[a]_n$ \`e invertibile se e solo se $(a,n)=1$.
+\subsection{Corollario}
+Se $p$ \`e primo, ogni elemento non nullo di $\mathbb{Z}_{/p\mathbb{Z}}$ \`e invertibile.
+\subsubsection{Dimostrazione}
+Se $a\neq 0$ in $\mathbb{Z}_{/p\mathbb{Z}}$, allora $p\not|a$ e, dato che $p$ \`e primo $(p,a)=1$, da cui la tesi.

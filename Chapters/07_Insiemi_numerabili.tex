@@ -1,0 +1,53 @@
+\chapter{Insiemi numerabili}
+\subsubsection{Definizione}
+Un insieme $X$ si dice numerabile se $|X|=|\mathbb{N}|$. La cardinalit\`a di $\mathbb{N}$ si indica con $\aleph_0$, \`e pertanto equivalente scrivere $|X|=\aleph_0$.
+\section{Unione di insiemi numerabili disgiunti}
+Se $X$ e $Y$ sono due insiemi numerabili disgiunti allora $X\cup Y$ \`e un insieme numerabile.
+\subsubsection{Dimostrazione}
+Siano $f:X\rightarrow \mathbb{N}$ e $g:Y\rightarrow\mathbb{N}$ due bigezioni e si definisca $h:X\cup Y\rightarrow\mathbb{N}$ come
+$h(x)=
+\begin{cases}
+2f(x)&\text{se }x\in X\\
+2g(x)+1&\text{se }x\in Y
+\end{cases} 
+$. Si verifica facilmente che $h$ \`e una bigezione.
+\section{Operazioni tra insiemi numerabili e finiti}
+\subsection{Unione di un insieme numerabile e uno finito}
+Se $X$ numerabile e $Y$ finito sono disgiunti allora $X\cup Y$ \`e numerabile.
+\subsubsection{Dimostrazione}
+Siano $f:X\rightarrow \mathbb{N}$ e $g:Y\rightarrow\mathbb{N}$ due bigezioni e si definisca $h:X\cup Y\rightarrow\mathbb{N}$ come:$
+h(x)=\begin{cases}
+g(x)\;&x\in Y\\
+f(x)+n\;&x\in X
+\end{cases}$ si verifica facilmente che $h$ \`e una bigezione.
+\subsection{Sottoinsiemi di un insieme numberabile}
+Se $X$ \`e un insieme numerabile e $Y\subset X$, allora $Y$ \`e finito o numerabile.
+\subsubsection{Dimostrazione}
+Se $Y$ non \`e finito allora contiene un sottoinsieme $Z$ numerabile, da cui segue la tesi del lemma dimostrato successivamente.
+\subsection{Cardinalit\`a dell'unione con insiemi infiniti}
+Se $X$ \`e un insieme infinito e $Y$ \`e un insieme finito o numerabile, allora $|X\cup Y|=|X|$.
+\subsubsection{Dimostrazione}
+Si supponga $Y$ disgiunto da $X$, in quanto $X\cup Y=X\cup(Y-X)$ e per la proposizione precendente $(Y-X)$ \`e finito o numerabile. Sia $Z\subset X$ un insieme numerabile, per
+le proposizioni precedenti esiste una bigezione $f:Z\rightarrow Z\cup Y$, si definisca allora $g:X\rightarrow X\cup Y$ ponendo:$
+g(x)=\begin{cases}
+f(x)\;&x\in Z\\
+x\;&x\in X-Z
+\end{cases}$. Si provi che \`e iniettiva: se $x_1, x_2\in Z$ allora $f(x_1)\neq f(x_2)$, perci\`o $g(x_1)\neq g(x_2)$, se $x_1, x_2\in X-Z$ evidentemente \`e iniettiva. Si 
+provi ora che \`e surgettiva: nel primo caso dipende dalla surgettivit\`a di $f$, nel secondo \`e banale. 
+\subsection{Unione di una famiglia di insiemi finiti}
+Sia $\{X_n|n\in\mathbb{N}\}$ \`e una famiglia di insiemi finiti a due a due disgiunti, allora $\bigcup\limits_{i=0}^\infty X_i$ \`e numerabile.
+\subsubsection{Dimostrazione}
+Sia $m_n=|X_n|$ e $\forall n$ sia $f_n:I_n\rightarrow X_n$ una bigezione. Si considerino i numeri $M_n=\sum\limits_{i=0}^nm_i,\;M_{-1}=0$ e si definisca $f:\mathbb{N}
+\rightarrow \bigcup\limits_{i=0}^\infty X_i$ e si ponga $f(k)=f_n(k-M_{n-1}$ se $M_{n-1}\le k<M_n$. \`E banale mostrare come questa funzione sia bigettiva. 
+\subsection{Prodotto di due insiemi numerabili}
+Essendo $\mathbb{N}\times\mathbb{N}$ numerabile, ogni prodotto di insiemi numerabili \`e numerabile.
+\subsubsection{Dimostrazione}
+Per ogni $m\in\mathbb{N}$ si consideri $X_m=\{(n_1, n_2)\in\mathbb{N}\times\mathbb{N}|n_1+n_2=m$, chiaramente $|X_m|=m+1$ per ogni $m$ e $X_m\cap X_k=\emptyset$ se $m\neq k$,
+e infine $\bigcup\limits_{m=0}^\infty X_m=\mathbb{N}\times\mathbb{N}$ (si noti che $(n_1, n_2)\in X_{n_1+n_2}$, la tesi segue pertanto dalla proposizione precedente. Si noti 
+inoltre che se $X$ e $Y$ sono numerabili, allora $f:X\rightarrow\mathbb{N}$ e $g:Y\rightarrow\mathbb{N}$ sono bigezioni e pertanto la applicazione definita dal loro prodotto
+\`e una bigezione. 
+\subsection{Unione di una famiglia di insiemi numerabili}
+Sia $\{X_n|n\in\mathbb{N}\}$ \`e una famiglia di insiemi numerabili a due a due disgiunti, allora $\bigcup\limits_{i=0}^\infty X_i$ \`e numerabile.
+\subsubsection{Dimostrazione}
+Per ogni $n\in\mathbb{N}$ sia $f_n:\mathbb{N}\rightarrow X_n$ una bigezione e si definisca $f\mathbb{n}\times\mathbb{N}\rightarrow\bigcup\limits_{i=0}^\infty X_i$, ponendo 
+$f(n,m)=f_n(m)$, \`e banale verificare come $f$ sia una bigezione. 

@@ -1,0 +1,65 @@
+\chapter{Equazioni lineari modulo n}
+\subsubsection{Osservazione}
+Si osservi che se $a$ \`e invertibile in $\mathbb{Z}_{/n\mathbb{Z}}$ e se $c,d\in\mathbb{Z}_{/n\mathbb{Z}}$ sono tali che $ac=ad\in\mathbb{Z}_{/n\mathbb{Z}}$ allora 
+necessariamente $c=d\in\mathbb{Z}_{/n\mathbb{Z}}$, in quanto se $x$ \`e tale che $ax=1$, $ac=ad\Rightarrow axc=axd\Rightarrow 1c=1d\Rightarrow c=d$. In particolare se $a$ \`e
+invertibile allora da $ab=0$ si deduce che $b=0$. Se $p$ \`e primo tutti gli elementi non nulli sono invertibili, pertanto se $a\neq0\in\mathbb{Z}_{/n\mathbb{Z}}$ allora $ac=ad
+\in\mathbb{Z}_{/p\mathbb{Z}}$ implica che $c=d\in\mathbb{Z}_{/p\mathbb{Z}}$, in particolare $ab=0$ implica che $a=0\lor b=0\in\mathbb{Z}_{/p\mathbb{Z}}$.
+\section{Soluzioni di una congruenza}
+Siano $a,b\in\mathbb{Z}$, allora esiste un intero $x$ tale che: $ax\equiv b\mod n$ se e solo se $(a,n)|b$. Se $x_0$ \`e una soluzione della congruenza, allora detto $n'=
+\frac{n}{(a,n)}$, l'insieme delle soluzioni \`e dato da $[x_0]_{n'}=\{x_0+kn'|k\in\mathbb{Z}\}$.
+\subsubsection{Dimostrazione}
+Se $ax\equiv a \mod n$ allora $n|(ax-b)$, pertanto esiste $k$ tale che $(ax-b)=kn$, ossia $b=ax-kn$, pertanto $(a,b)|b$. Viceversa si supponga che $(a,n)|b$. Siano $\alpha,
+\beta$ tali che $(a,n)=\alpha a+\beta n$ e sia $k$ tale che $b=k(a,n)$, allora $b=k(\alpha a+\beta n)$, da cui $n|(a(k\alpha)-b)$, ossia $k\alpha$ \`e una soluzione della 
+congruenza. Si provi ora che l'insieme delle soluzioni \`e $[x_0]_{n'}$. Si provi che se $x_1\in[x_0]_{n'}$ \`e una soluzione: $x_1=x_0+kn'$, pertanto $ax_1=ax_0+\frac{kan}
+{(a,n)}$, da cui $ax_1-x_0=\frac{kan}{(a,n)}$, dato che $\frac{a}{(a,n)}\in\mathbb{Z}$, $n$ \`e un multiplo di $\frac{kan}{(a,n)}$, ovvero $ax_1\equiv ax_0\mod n$. Dato che 
+$ax_0\equiv b\mod n$ anche $ax_1\equiv b\mod n$. Viceversa se $ax_1\equiv b\mod n$ allora $ax_1\equiv ax_2\mod n$ da cui si ricava che $a(x_1-x_0)\equiv 0\mod n$, ovvero $n|
+a(x_1-x_0)$. Allora, dato che $n'|n$ anche $n'|a'(x_1-x_0)$, essendo $a'=\frac{a}{(a,n)}$, come visto in precedenza $(n',a')=1$, usando la proposizione precedente $n'|(x_1-x_0)
+$.
+\subsubsection{Osservazione}
+Questa dimostrazione mostra un metodo operativo per trovare una soluzione di una congruenza: basta usare l'algoritmo di Euclide per trovare $\alpha$ e $\beta$ tali che 
+$(a,n)=\alpha a+\beta n$.
+\section{Congruenza e classi}
+Siano $a,b\in\mathbb{Z}$ e $n\in\mathbb{N}$ tale che $(a,n)=1$, allora l'insieme degli $x$ tali che $ax\equiv b\mod n$ sono una classe di congruenza modulo $n$.
+\subsubsection{Dimostrazione}
+La congruenza ha soluzioni per quanto visto sopra. Passando a considerare le classi di congruenza si ha che se $x$ \`e una soluzione allora $[a]_n[x]_n=[b]_n$ e dato che $[a]_n
+$ \`e invertibile implica che, moltiplicando entrambi i membri per $[a]_n^{-1}$ che $[x]_n=[a]_n^{-1}[b]_n$, provando la tesi.
+\section{Il teorema di Fermat}
+\subsection{Prodotto di elementi in un insieme quoziente}
+Siano $u, v\in\mathbb{Z}_{/n\mathbb{Z}^\star}$ allora $uv\in\mathbb{Z}_{/n\mathbb{Z}^\star}$.
+\subsubsection{Dimostrazione}
+$uv(v^{-1}u^{-1})=(vv^{-1})(uu^{-1})=1$.
+\subsubsection{Osservazione}
+Immediata conseguenza della proposizione precedente \`e che se si fissa $u\in\mathbb{Z}_{/n\mathbb{Z}^\star}$ allora \`e possibile definire la funzione $L_u:\mathbb{Z}_{/n
+\mathbb{Z}^\star}\rightarrow\mathbb{Z}_{/n\mathbb{Z}^\star}$ ponendo $L_u(v)=uv$. Per quanto osservato sopra tale funzione risulta iniettiva, infatti $L_u(v_1)=L_u(V_2)$ vuol
+dire che $uv_1=uv_2$ e dato che $u$ \`e invertibile $v_1=v_2$ e dato che $\mathbb{Z}_{/n\mathbb{Z}^\star}$ \`e finito, allora \`e bigettiva.
+\subsubsection{Funzione di Eulero}
+Dato un numero naturale $n$ si indica con $\Phi(n)$ il numero di naturali minori o uguali a $n$ e coprimi con $n$. Questa funzione si chiama funzione $\Phi$ di Eulero.
+\subsection{Cardinalit\`a dell'insieme quoziente}
+$\forall n>0, |\mathbb{Z}_{/n\mathbb{Z}^\star}|=\Phi(n)$.
+\section{Enunciato}
+Sia $u\in\mathbb{Z}_{/n\mathbb{Z}^\star}$, allora $u^{\Phi(n)}=1\in\mathbb{Z}_{/n\mathbb{Z}}$.
+\subsubsection{Dimostrazione}
+Sia $k=\Phi(n)$ e siano $x_1,\cdots, x_k$ tutti gli elementi di $\mathbb{Z}_{/n\mathbb{Z}^\star}$, dato che l'applicazione $L_u$ \`e bigettiva $L_u(x_1),\cdots, L_u(x_k)$ sono 
+ancora tutti gli insiemi di $\mathbb{Z}_{/n\mathbb{Z}^\star}$, pertanto per commutativit\`a del prodotto $x_1\cdot x_2\cdot\cdots\cdot x_k=ux_1\cdot ux_2\cdot\cdots\cdot ux_k=
+u^kx_1\cdot x_2\cdot\cdots\cdot x_k$. Come dimostrato precedentemente $x_1\cdot x_2\cdot\cdots\cdot x_k$ \`e invertibile, pertanto $u^k=1$.
+\subsection{Corollario}
+Se $p$ \`e primo allora per ogni $x\neq 0$ in $\mathbb{Z}_{/p\mathbb{Z}}$ si ha che $x^{p-1}=1\in\mathbb{Z}_{/n\mathbb{Z}}$.
+\subsubsection{Dimostrazione}
+Segue direttamente dal teorema precedente in quanto se $p$ \`e primo tutti i numeri minori di $p$ sono coprimi con $p$, pertanto $\Phi(p)=p-1$.
+\section{Crittografia RSA}
+\subsection{Proposizione fondamentale della crittografia RSA}
+Sia $c$ coprimo con $\Phi(n)$, allora l'applicazione $C:\mathbb{Z}_{/n\mathbb{Z}^\star}\rightarrow\mathbb{Z}_{/n\mathbb{Z}^\star}$ definita da $x\rightarrow x^c$ \`e 
+invertibile e la sua inversa \`e data da $D(x)=x^d$ essendo $cd\equiv 1\mod \Phi(n)$.
+\subsubsection{Dimostrazione}
+Se $x$ \`e coprimo con $\Phi(n)$ allora esiste un $d$ come nell'enunciato tale che $cd\equiv 1\mod\Phi(n)$, allora $cd=k\Phi(n)+1$, pertanto, utilizzando il teorema di 
+Fermat si ottiene: $D(C(x))=(x^c)^d=x^{cd}=x^{k\Phi(n)+1}=x(x^{\Phi(n)})^k=x1^k=x$. \`E del tutto analoga la prova di $C(D(x))\forall x$, da cui la tesi.
+\subsection{Metodo di crittografia RSA}
+La proposizione sopra dimostrata \`e alla base del metodo RSA di crittografia a chiave pubblica. Si supponga che $A$ debba trasmettere un messaggio riservato a $B$, allora
+$B$ rende noti due numeri $m$ e $c$ (modulo e chiave di codifica) tali che $(c,\Phi(m))=1$. L'alfabeto della trasmissione sar\`a allora costituito da $\mathbb{Z}_{/n\mathbb{Z}^
+\star}$ e durante la codifica la lettera $x$ verr\`a sostituita con la lettera $x^c$ modulo $m$. Il fatto che $(c,\Phi(m))=1$ garantisce che si possa determinare un numero $d$
+tale che $cd\equiv 1\mod \Phi(m)$, ossia tale che $cd=k\Phi(m)+1$. Per decodificare il messaggio basta ora elevare alla potenza $d$ in quanto $(x^c)^d=x^{cd}=x^{k\Phi(m)+1}=
+(x^{\Phi(m)})^kx=i^kx=x\in\mathbb{Z}_{/m\mathbb{Z}}$. Chiaramente chiunque conosca $c$ e $\Phi(m)$ \`e in grado di determinare la chiave di codifica $d$, essendo per 
+determinare $\Phi(m)$ necessario calcolare la scomposizione in fattori primi di $m$ ed essendo questo un lavoro computazionalmente complesso, soltanto chi ha costruito $m$ e 
+$c$ \`e in grado di determinare $c$ facilmente. I numeri che vengono utilizzati sono del tipo $m=pq$ con $p$ e $q$ primi, per i quali si ha $\Phi(m)=(p-1)(q-1)$ e per i quali
+determinare $\Phi(m)$ \`e computazionalmente equivalente a trovare la fattorizzazione di $m$.
+ 

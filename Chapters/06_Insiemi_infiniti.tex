@@ -1,0 +1,51 @@
+\chapter{Insiemi infiniti}
+\section{Assioma della scelta}
+Sia $I$ un insieme e $\forall i\in I$ sia dato un insieme $A_i\neq\emptyset$, allora esiste una funzione, detta funzione di scelta:
+\begin{equation}
+\varphi: I\rightarrow\bigcup\limits_{i\in I}A_i
+\end{equation}
+Tale che $\forall i\in I\varphi(i)\in A_i$.
+\subsubsection{Osservazioni}
+\begin{itemize}
+\item Questo assioma determina che quando si ha un insieme di insiemi non vuoti \`e possibile scegliere in un colpo solo un elemento da ciascuno di essi, senza
+determinare per\`o quale sia tale funzione. 
+\item Una formulazione simile all'assioma della scelta: si consideri un insieme $X$ e come insieme di indici $2^X-\{\emptyset\}$ e per ogni $i\in I$ si ponga 
+$A_i=i$. L'assioma della scelta determina l'esistenza della funzione $\varphi:2^X-\{\emptyset\}\rightarrow X=\bigcup\limits_{i\in 2^X-\{\emptyset\}} i$ tale che 
+$\varphi(i)\in i\forall i\in 2^X-\{\emptyset\}$
+\end{itemize}
+\section{Equipotenza ai numeri naturali}
+Se $X$ \`e un insieme infinito allora contiene un sottoinsieme $Y$ equipotente a $\mathbb{N}$. 
+\subsubsection{Dimostrazione}
+Sia $\varphi:2^X-\{\emptyset\}\rightarrow X$ una funzione di scelta e si denoti con $2^X_F$ l'insieme delle parti finite di $X$, ovvero $2^X_F=\{Z\subset X|Z$ 
+\`e finito$\}$. Dato un elemento $x_0\in X$ che esiste in quanto $X$ \`e infinito si consideri la funzione $\psi:\mathbb{N}\rightarrow 2^X_F$ definita 
+ricorsivamente da:
+\begin{align*}
+\psi(0)&=\{x_0\}\\
+\psi(n+1)&=\psi(n)+\cup\{\varphi(X-\psi(n))\}
+\end{align*}
+E si definisca la funzione $f:\mathbb{N}\rightarrow Y$ ponendo $f(0)=x_0$ e per ogni $n>0$ $f(n)=\varphi(X-\psi(n-1))$. Si osservi che dalla definizione di $\psi$
+deriva che $\forall n\in\mathbb{N}, f(n)\in\psi(n)$ e che $\psi(n)\subset\psi(n+1)$, da cui segue che se $n\le m$ allora $\psi(n)\in\psi(m)$ e pertanto $f(n)\in
+\psi(m)$. Ne segue che se $n<m$, $f(n)\in\psi(m-1)$, mentre $f(m)=\varphi(X-\psi(m-1))\in X-\psi(m-1)$ pertanto $f(n)\neq f(m)$, ovvero $f$ \`e iniettiva. Per
+il lemma dei cassetti allora $Y$ \`e equipotente a $Y$.
+\subsubsection{Osservazioni}
+\begin{itemize}
+\item Nella dimostrazione del teorema si definisce ricorsivamente la funzione $\psi:\mathbb{N}\rightarrow 2^X_F$. La funzione $h:\mathbb{N}\times 2^X_F\rightarrow 
+2^X_F$ che in questa funzione ricorsiva \`e data da $h(n, Z)=Z\cup\{\varphi(X-Z)\}$. Dato che $X$ \`e infinito e $Z$ finito, allora $X-Z\neq\emptyset$ pertanto 
+$\varphi(X-Z)$ ha senso ed \`e finito. 
+\item Questo teorema dimostra che la cardinalit\`a dei numeri naturali \`e la pi\`u piccola delle cardinalit\`a degli insiemi infiniti.
+\end{itemize}
+\section{Equipotenza di sottoinsiemi di insiemi finiti}
+Ogni insieme infinito \`e equipotente ad un suo sottoinsieme proprio.
+\subsubsection{Dimostrazione}
+Sia $X$ un insieme finito e $Y\subseteq X$ un suo sottoinsieme equipotente a $\mathbb{N}$, si \`e gi\`a visto come $\mathbb{N}$ sia equipotente ad un suo 
+sottoinsieme proprio, quindi se $|Y|=|\mathbb{N}|$, $Y$ \`e equipotente ad un suo sottoinsieme proprio, in particolare esiste una bigezione $f:Y\rightarrow Y'$
+essendo $Y'\underset{\neq}{\subset}Y$. Pertanto la funzione $g:X\rightarrow X$ \`e definita da:
+\begin{align*}
+x\;\;&\text{se }x\in X-Y\\
+f(x)\;\;&\text{se }x\in Y
+\end{align*}
+D\`a una bigezione tra $X$ e il suo sottoinsieme $(X-Y)\cup Y'\underset{\neq}{\subset}X$.
+\section{Definizione di insieme infinito}
+La proposizione dimostrata precedente e il corollario del teorema dei sottoinsiemi di un insieme finito determinanto questa definizione di insieme infinito.
+\subsubsection{Definizione}
+Un insieme \`e infinito se e solo se \`e equipotente ad un suo sottoinsieme proprio.

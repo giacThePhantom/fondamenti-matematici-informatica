@@ -1,0 +1,27 @@
+\chapter{Scrittura dei naturali in base arbitraria}
+Sia $b\in\mathbb{N}$ si dice che $n\in\mathbb{N}$ \`e rappresentabile in base $b$ se esistono $k\in\mathbb{N}\wedge\varepsilon_0,\varepsilon_1,\cdots,\varepsilon_k\in I_b=\{0,1,
+\cdots, b-1\}$ tali che $n=\varepsilon_0+\varepsilon_1b+\varepsilon_2b^2+\cdots+\varepsilon_kb^k\in\mathbb{N}$, che se eisstono si pu\`o scrivere $n=(\varepsilon_k
+\varepsilon_{k-1}\cdots\varepsilon_1\varepsilon_0)_b$. Equivalentemente $n$ \`e rappresentabile in base $b$ se $\exists\{\varepsilon_i\}_{i\in\mathbb{N}}$ con $\varepsilon_i\in 
+I_b$ tale che $\{\varepsilon_i\}_{i\in I}$ tale che $\varepsilon_n=0\;\forall n\ge k$ e $n=\sum\limits_{i=0}^k\varepsilon_ib^i$.
+\section{Casi particolari}
+\subsection{$\mathbf{b=0}$}
+$n=\sum\limits_{i\in 0}^\infty\varepsilon_ib^i$, $\varepsilon_i\in I_0=\emptyset$, pertanto nessun naturale si pu\`o scrivere in tale modo.
+\subsection{$\mathbf{b=1}$}
+$n=\sum\limits_{i\in 0}^\infty\varepsilon_ib^i$, $\varepsilon_i\in I_1=\{0\}$, pertanto si pu\`o rappresentare solo lo zero.
+\section{Teorema}
+Sia $b\ge 2$ allora ogni numero naturale $n\in\mathbb{N}$ \`e rappresentabile in modo unico in base $b$, ovvero $\exists!\{\varepsilon_i\}_{i\in\mathbb{N}}:\varepsilon_i\in I_b
+\;\forall i\in \mathbb{N}$ tale che la successione \`e definita nulla e vale $n=\sum\limits_{i=0}^k\varepsilon_ib^i$. 
+\subsection{Dimostrazione}
+\subsubsection{Esistenza}
+Si provi per induzione di seconda forma su $n$. Per $n=0$, si pone $\varepsilon_i=0\;\forall i\in\mathbb{N}$, pertanto la successione \`e nulla e $\varepsilon_i=0\in I_b$ \`e 
+vero e $n=0=\sum\limits_{i=0}^k0b^i$. Si supponga ora $n>0$ e che la tesi sia vera $\forall k<n$. Siano $q,r$ tali che $n=bq+r$ con $0\le r<b$, dato che $b>\ge 2$ si ha che 
+$0\le q<bq \le bq+r=n$, quindi per ipotesi esiste una successione definitivamente nulla $\{\delta_i\}$ costituita di interi tali che $0\le\delta_i<b$ per ogni $i$ e tale che $q=
+\sum\limits_{i=0}^\infty\delta_ib^i$. Pertanto $n=bq+r=b\sum\limits\limits_{i=0}^\infty\delta_ib^i+r=\sum\limits\limits_{i=1}^\infty\delta_{i-1}b^i+r=\sum\limits\limits_{i=0}^
+\infty\varepsilon_ib^i$, dove si \`e posto $\varepsilon_0=r$ e $\varepsilon_i=\delta_{i-1}$. La successione $\{\varepsilon_i\}$ \`e definitivamente nulla ed inoltre $0\le 
+\varepsilon_i=\delta_{i-1}<b\;\;\forall i$ e $0\le \varepsilon_0=r<b$.
+\subsubsection{Unicit\`a}
+Si proceda per induzione su $n$. Se $n=0=\sum\limits_i\varepsilon_ib^i$ allora $\varepsilon_i=0\;\;\forall i$. Si supponga ora $n>0$ e che l'espressione in base $b$ sia unica 
+per tutti i numeri $k<n$, sia ora $n=\sum\limits_{i=0}^\infty\varepsilon_ib^{i}=\sum\limits_{i=0}^\infty\varepsilon'_ib^{i}$, allora si pu\`o scrivere: $n=b\sum\limits_{i=1}^
+\infty\varepsilon_ib^{i-1}+\varepsilon_0=b\sum\limits_{i=1}^\infty\varepsilon_ib^{i-1}+\varepsilon'_0$. Ora, per l'unicit\`a della divisione euclidea si ha che $\varepsilon_0=
+\varepsilon'_0$ e $q=\sum\limits_{i=1}^\infty\varepsilon_ib^{i-1}=\sum\limits_{i=1}^\infty\varepsilon'_ib^{i-1}+\varepsilon_0$. Come prima $q<n$ e pertanto per ipotesi di 
+induzione si ha che $\varepsilon_i=\varepsilon'_i\;\;\forall i\ge 1$.

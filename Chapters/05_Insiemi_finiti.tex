@@ -1,0 +1,38 @@
+\chapter{Insiemi Finiti}
+Dato un numero naturale $n\in\mathbb{N}$ e denotato $I_n=\{0,1,\cdots, n-1\}$, si dice che un insieme $X$ \`e finito se esiste $n\in\mathbb{N}$ tale che $X$ \`e 
+equipotente a $I_n$, ovvero $X\sim I_n$. Un insieme \`e detto infinito se non \`e finito. 
+\section{Il lemma dei cassetti}
+Siano $X$ e $Y$ due insiemi aventi rispettivamente $X\sim I_n$ e $Y\sim I_m$ con $n<m$ allora ogni applicazione $f:Y\rightarrow X$ non \`e iniettiva.
+\subsubsection{Dimostrazione}
+Si proceda per induzione su $n$. Se $n=0$ allora $X=\emptyset$ e $Y\neq\emptyset$, pertanto l'insieme $X^Y$ delle applicazioni \`e vuoto e non c\`e nulla da 
+dimostrare (dal falso segue ogni cosa). Ora si supponga che la tesi sia vera per $n$ e la si provi per $n+1$: sia $X\sim I_{n=1}$ e $Y\sim I_m$ con $m>n+1$. Si
+supponga per assurdo che l'applicazione $f:Y\rightarrow X$ sia iniettiva. Per definizione esiste una bigezione $g:I_{n+1}\rightarrow X$, si ponga $x_n=g(n)$ e 
+$X'=X-\{x_n\}$. Ovviamente $X'$ \`e in bigezione con $I_n$. si hanno perci\`o due casi:
+\begin{itemize}
+\item $f^{-1}(x_n)=\emptyset$, ovvero che $\forall y\in Y, f(y)\neq x_n$.
+\item $f^{-1}(x_n)\neq\emptyset$, ovvero che $\exists y\in Y: f(y)=x_n$.
+\end{itemize}
+Nel primo caso $f(Y)\subset X'$, pertanto $f:Y\rightarrow X'$ sarebbe una funzione iniettiva da un insieme equipotente a $I_m$ in un'insieme equipotente a $I_n$, 
+dato che $m>n+1>n$ questo \`e assurdo per ipotesi di induzione. Nel secondo caso sia $y\in Y$ tale che $f(y)=x_n$ e $Y'=Y-\{y\}$. Dato che $f$ \`e iniettiva, 
+$f(Y')\subset X'$ perci\`o $f|{Y'}:Y'\rightarrow X'$ \`e un'applicazione iniettiva. Dato che $Y'\sim I_{m-1}$ e $X'\sim I_{n}$ e che $m-1>n$ si ottiene un assurdo
+per ipotesi di induzione.
+\section{Cardinalit\` degli insiemi finiti}
+\subsubsection{Corollario del lemma dei Cassetti}
+Se $n,m\in\mathbb{N}$ sono due numeri naturali diversi e $X,Y$ sono insiemi finiti con $|X|=|I_n|$ e $|Y|=|I_m|$ allora $X$ e $Y$ non sono equipotenti, in 
+particolare se $|X|=|I_n|$ e $|X|=|I_m|$ allora $m=n$.
+\subsection{Cardinalit\`a}
+Sia $X$ un insieme finito, si dice cardinalit\`a di $X$ l'unico numero naturale $n$ tale che $|X|=|I_n|$. Tale numero si indica con $|X|$.
+\subsubsection{Equipotenza e cardinalit\`a}
+Due insiemi finiti sono equipotenti se e solo se $|X|=|Y|$. Infatti se $|X|=|Y|$ allora $\exists n\in\mathbb{N}$ tale che $X$ \`e equipotente a $I_n$ e $Y$ \`e
+equipotente a $I_n$, ma allora $X$ e $Y$ sono equipotenti. Viceversa se sono equipotenti il corollario precedente mostra che hanno la stessa cardinalit\`a.
+\section{Sottoinsiemi di un insieme finito}
+Sia $X$ un insieme finito tale che $Y\subset X$ allora anche $Y$ \`e finito e $|Y|\le |X|$. Se $Y$ \`e un sottoinsieme proprio allora $|Y|<|X|$.
+\subsubsection{Dimostrazione}
+Si proceda per induzione su $n=|X|$. Se $n=0$ allora $X=\emptyset$ e anche $Y=\emptyset$ da cui si conclude. Si supponga ora che la tesi sia vera per $n$ e la
+si provi per $n+1$: sia dato $X$ con $|X|=n+1$. Sia $f:I_{n+1}\rightarrow X$ una bigezione, e si ponga $x_n=f(n)$ e $X'=X-\{x_n\}$. Ovviamente $f|_{I_n}:I_n
+\rightarrow X'$  \`e una bigezione, pertanto $|X'|=n$. Si considerano pertanto i due casi, in cui $x_n\in Y$ e $x_n\not\in Y$. Nel primo caso $Y\subset X'$, 
+pertanto per ipotesi di induzione $|Y|\le|X'|=n<n+1=|X|$. Nel secondo caso, considerato $Y'=Y-\{x_n\}$ si ha che $Y'\subset X'$, pertato $|Y'|\le|X'|$, ovvero
+$|Y|=|Y'|+1\le |X'|=|X|+1=|X|$. SI osservi che in quest'ultimo caso che se $Y\neq X$ allora anche $Y'\neq X'$, pertanto per ipotesi di induzione si ha che 
+$|Y'|<|X'|$ da cui $|Y|<|X|$.
+\subsection{Corollario}
+Un insieme finito non \`e equipotente ad alcun suo sottoinsieme proprio.

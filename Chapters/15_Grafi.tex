@@ -1,0 +1,173 @@
+\chapter{I grafi}
+Dato $V$ un insieme e $k\in\mathbb{N}$, $\binom{V}{k}:=\{A\in P(V)||A|=k\}$ che corrisponde esattamente: $|\binom{V}{k}|=\binom{|V|}{k}$.
+\subsubsection{Definizione}
+Un grafo $G$ \`e una coppia $(V,\varepsilon)$, dove $V$ \`e un insieme non vuoto detto insieme dei vertici di $G$ e $\varepsilon$ \`e un sottoinsieme di $\binom{V}{2}$, detto 
+insieme dei lati di $G$. Chiamando $\{v,w\}$ $2$-sottoinsiemi di $V$, tale elemento si chiama lato di $G$, $v$ e $w$ si chiamano estremi di tale lato, 
+inoltre se due vertici sono tali che $\{v,w\}\in\varepsilon$ si dice anche che $v$ e $w$ sono adiacenti. 
+\section{Grafici notevoli}
+\subsection{Cammino di lunghezza n}
+Si fissi un numero $n\in\mathbb{N}$, si definisce il cammino $P_n$ di lunghezza $n$ come $V(P_n)=\{0,1,\cdots, n\}$. $\varepsilon(P_n)=\{\{i,i+1\}\in\binom{V(P_n)}{2}|i\in
+\{0,1,\cdots, n-1\}\}$, dove $\varepsilon(P_0)$ ha un unico vertice ma non ci sono lati. $n$ sar\`a il numero di lati. 
+\subsubsection{Cammino di lunghezza infinita}
+Si definisce il cammino di lunghezza infinita $P_\infty$ dove, dove $V(P_\infty)=\mathbb{N}$, e $\varepsilon(P_\infty)=\{\{i,i+1\}\in\binom{V(P_n)}{2}|i\in\mathbb{N}\}$. Un 
+altro cammino infinito include $\mathbb{Z}$. 
+\subsection{Ciclo}
+Sia $n\ge 3$, si definisce il ciclo $C_n$ di lunghezza $n$, o $n$-ciclo, ponendo $C(C_n)=\{1,2,\cdots, n\}$ e $\varepsilon(C_n)=\{\{i,i+1\}\in\binom{V(n)}{2}|i\in\{1,\cdots, 
+n-1\}\}\cup \{\{1,n\}\}$.
+\subsection{Grafo completo}
+Sia $n\ge 1$ $K_n$ un grafo completo su $n$ vertici dove $V(K_n)=\{1,2,\cdots, n\}$ e $\varepsilon(K_n)=\binom{V(K_n)}{2}$.
+\subsection{Grafo completo partito n e m vertici}
+Sia $K_{n,m}$, $V(K_{n,m})=\{1,\cdots, n+m\}$, $\varepsilon(K_{n,m})=\{\{i,j\}\in\binom{V(K_{n,m}}{2}|i\in\{1,\cdots, n\}, j\in\{n+1,\cdots, n+m\}\}$.
+\section{Sottografi e sottografi indotti}
+\subsubsection{Definizione}
+Si supponga $G=(V,\varepsilon)$ e $G'=(V',\varepsilon')$ siano due grafi, si dice che $G'$ \`e un sottografo di $G$ se $V'\subset V$ e $\varepsilon'\subset\varepsilon$.
+\subsubsection{Osservazione}
+$G'<G\wedge G''<G'\Rightarrow G''<G$
+\subsection{Sottografo indotto da V'}
+Sia $G=(V, \varepsilon)$ un grafo e sia $V'\subset V$, $V'\neq\emptyset$. Il sottografo $G'$ di $G$ definito ponendo $G'=(V', \varepsilon\cap\binom{V'}{2})$, si indica con 
+$G'=G[V']$
+\section{Morfismi dei grafi}
+\subsubsection{Definizione}
+Siano $G=(V,\varepsilon)$ e $G'=(V',\varepsilon')$ due grafi. SIa $f:V\rightarrow V'$ una funzione iniettiva, si dice che $f$ \`e un morfismo da $G$ in $G'$ se preserva 
+l'adiacenza nel senso seguente; $\forall \epsilon=\{v,w\}\in\varepsilon, f(\epsilon)=\{f(v), f(w)\}\in\varepsilon'$, i questo caso si scrive $f:G\rightarrow G'$.
+\subsection{Isomorfismo}
+\subsubsection{Definizione}
+Un morfismo $f:V\rightarrow V'$ si dice isomorfismo da $G$ a $G'$ se $f$ \`e bigettiva e $f^{-1}$ \`e un morfismo. Equivalentemente Se valgono le 
+seguenti propriet\`a:
+\begin{itemize}
+\item $f$ \`e una bigezione.
+\item $\forall e\in \varepsilon(G):f(e)\in\varepsilon(G')\wedge e\in\binom{V(G)}{2}, f(e)\in\varepsilon(G')\Rightarrow e\in \varepsilon(G)$
+\end{itemize}
+La seconda propriet\`a pu\`o essere rienunciata come $\{f(e)\in\binom{V(G')}{2}|e\in\varepsilon(G)\}=\varepsilon(G')$, ovvero le immagini di tutti i lati sono tutti e soli i 
+lati del grafo in arrivo.
+\subsubsection{Relazione di isomorfismo}
+Due grafi $G$ e $G'$ si dicono isomorfi se $\exists f:G\rightarrow G'$ isomorfismo. In questo caso si nota con $G\cong G'$. Dati tre grafi $G,G',G''$:
+\begin{enumerate}
+\item $G\cong G$ (si consideri l'identit\`a dei vertici).
+\item $G\cong G'\Rightarrow G'\cong G$ (si consideri la funzione isomorfica inversa).
+\item $G\cong G'\wedge G'\cong G''\Rightarrow G\cong G''$ (si consideri la composizione di isomorfismi).
+\end{enumerate}
+\section{Difficolt\`a della classificazione di grafi}
+Perch\`e due grafi siano isomorfi devono avere lo stesso numero di vertici e lati. Sia $n$ il numero di vertici e $l$ il numero di lati. Queste condizioni non sono sufficienti 
+affinch\`e esista un isomorfismo. Fissato $n\ge 1$ e considerando l'insieme di tutti i grafi con $n$ vertici, il massimo numero possibile di grafi che si possono scegliere che 
+non sono due a due isomorfi (classi di isomorfismo distinte) sono circa $g_n\sim 2^{\frac{n^2}{2}}$. 
+\section{Passeggiate, cammini e cicli}
+\subsubsection{Definizione}
+Sia $G=(V,\varepsilon)$ un grafo e sia $(v_0,v_1,\cdots, v_k)\in V$ una successione ordinata finita di vertici di $G$. Si dice che:
+\begin{enumerate}
+\item $(v_0,v_1,\cdots, v_k)$ \`e una passeggiata in $G$ se $\{v_i,v_{i+1}\}\in\varepsilon\forall i\in\{0,1,\cdots, k-1\}$. Se $k=0$ la successione $(v_0)$.
+\item $(v_0,v_1,\cdots, v_k)$ \`e un cammino in $G$ se \`e una passeggiata e $v_i\neq v_j\forall i,j\in\{0,1,\cdots, k\}\wedge i\neq j$, ovvero ogni vertice viene considerato 
+una e una sola volta. $(v_0)$ \`e un cammino.
+\item $(v_0,v_1,\cdots, v_k)$ \`e un ciclo in $G$ se $k\ge 3$, $v_0=v_k$ e $(v_0,v_1,\cdots, v_{k-1})$ \`e un cammino. 
+\end{enumerate}
+\section{Congiungibilit\`a}
+\subsubsection{Definizione}
+Sia $G=(V,\varepsilon)$ un grafo e siano $v,w\in V$, si dice che $v$ e $w$ sono congiungibili per passeggiata (o per cammino) in $G$ se esiste una passeggiata (o un cammino) 
+$(V_0,\cdots, v_k)\in G$ tale che $v_0=v\wedge v_k=w$.
+\subsection{Condizione di congiungibilit\`a}
+Sia $G=(V,\varepsilon)$ un grafo e siano $v,w\in V$. Allora $v$ e $w$ sono congiungibili per passeggiate in $G$ se e soltato se lo sono per cammino.
+\subsubsection{Dimostrazione} 
+Dalla congiungibilit\`a per cammino la dimostrazione \`e banale in quanto un cammino \`e anche una passeggiata. Per dimostrare il viceversa si assuma
+l'esistenza di una passeggiata $P=(v_0,\cdots, v_k)$ tale che $v_0=v$ e $v_k=w$. Si indichi con $\mathcal{P}$ l'insieme di tutte le passeggiate $Q$ in $G$ tali che $v_0=v$ e 
+$v_k=w$. Per ipotesi $p\in\mathcal{P}\neq\emptyset$. Dunque sia $\mathcal:=\{l(Q)\in\mathbb{N}|Q\in\mathcal{P}\}$ con $l(Q)$ il numero di lati attraversati da $Q$ o lunghezza 
+della passeggiata. $\mathcal{A}\neq\emptyset$, poich\`e $\mathcal{A}\subset\mathbb{N}$ $\exists\min\mathcal{A}=l(P_0)$, $P_0$ \`e la passeggiata con il numero minimo di lati.
+Sia pertanto $P_0=(y_0,y_1,\cdots, y_h)$, se $P_0$ non fosse un cammino esisterebbero $i,j\in\{0,\cdots, h\}:i\neq j\wedge v_i=v_j$. Si pu\`o definire allora un'altra 
+passeggiata $P_1=(y_0,\cdots, y_i,y_{j+1}, \cdots, y_h)$, pertanto $l(P_q)=l(P_0)-(j-1)\le l(P_0)<l(P_1)$, che \`e un assurdo, pertanto $P_0$ \`e un assurdo. 
+\subsection{Congiungibilit\`a ed equivalenza}
+La relazione di essere congiungibili per passeggio o per cammino \`e una relazione di equivalenza sui vertici.
+\subsubsection{Dimostrazione}
+$G=(V,\varepsilon)$ un grafo, dati $v, w\in V$, $v\sim w$ se $v$ e $w$ sono congiungibili in $G$. Siano $v,w,z\in V$.
+\begin{itemize}
+\item \textbf{Riflessivit\`a}: $v\sim v$ dal cammino $(v)$.
+\item \textbf{Simmetria}: si supponga che $v\sim w$, ovvero $\exists (v_0, \cdots, v_k)\Rightarrow(v_k, \cdots, v_0)$, pertanto $w\sim v$.
+\item \textbf{Transitivit\`a}: $v\sim w\wedge w\sim z\Rightarrow v\sim z$, esistono pertanto due passeggiate $(v_0,\cdots, v_k)\wedge (w_0, w_h)$ tali che $v_0=v$, $v_k=w$ e 
+$w_0=w$ e $w_h=z$. Si costruisca pertanto $(v_0\cdots, v_k=w_0, \cdots, w_h)$ questo oggetto \`e una passeggiata in quanto i suoi elementi successivi sono adiacenti nelle 
+passeggiate precedenti.
+\end{itemize}
+\section{Componenti connesse}
+Dato $G=(V, \varepsilon)$ un grafo ed indicate con $V_1, \cdots, V_k$ le classi di equivalenza di $V$ rispetto a $\sim$ i sottografi $G[V_1]\cdots G([V_k]$ di $g$ indotti da 
+$V_1, \cdots, V_k$ si dicono componenti connesse di $G$.
+\subsection{Componenti connesse e morfismi}
+Sia $f:G\rightarrow G'$ un morfismo di grafi. Se $v$ e $w$ sono congiungibili allora lo sono anche $f(v)$ e $f(w)$.
+\subsubsection{Dimostrazione}
+Se $(v=v_0,\cdots, v_k=w)$ \`e una passeggiata allora $(f(v)=f(v_0),\cdots, f(v_k)=f(w))$ \`e una passeggiata in $g'$ per definizione di morfismo.
+\subsubsection{Componenti connesse e isomorfismi}
+Sia $f:G\rightarrow G'$ un isomorfismo di grafi. $v$ e $w$ sono congiungibili se e solo se lo sono anche $f(v)$ e $f(w)$. La dimostrazione segue immediatamente dalla precedente
+applicata  a $f$ e $f^{-1}$.
+\subsection{Isomorfismi di componenti connesse}
+Dati $G$ e $G'$ due grafi isomorfi questi hanno componenti connesse isomorfe, ovvero considerando $\{G_i\}_{i\in I}$ e $\{G'_j\}_{j\in J}$ gli insiemi delle componenti connesse
+dei due grafi allora esiste una bigezione $\phi:I\rightarrow J$ tale che $G_i\simeq G_{\phi(i)}$.
+\subsubsection{Dimostrazione}
+DA AGGIUNGERE vedi pag 45
+\section{Connessione}
+\subsubsection{Definizione}
+Se $G$ possiede una sola componente connessa allora \`e connesso, ovvero ogni coppia di vertici di $G$ \`e congruente.
+\subsubsection{Osservazioni}
+Siano $G$ e$G'$ due grafi e sia $f:G\rightarrow G'$ un morfismo
+\begin{itemize}
+\item Un grafo \`e connesso solo se $\forall v,w \in V(G)$ $v,w$ sono connessi da un cammino o da una passeggiata.
+\item Se $f$ \`e un isomorfismo e $G$ \`e connesso allora $\forall v', w'\in V'\Rightarrow\exists! f^{-1}(v')$ tale che $f(v)=v'$ e $w=f^{-1}(w')$ tale che $f(w)=w'$, poich\`e
+$G$ \`e connesso la trasformazione della passeggiata \`e una passeggiata.
+\end{itemize}
+\section{Grado di un vertice}
+Sia $G$ un grafo e sia $v\in V(G)$, si definisce il grado di $v$ in $G$ come $deg_G(v):=|\{e\in\varepsilon(G)|v\in e\}|$, in particolare se $G$ \`e finito allora $deg_G(v)\in
+\mathbb{N}$. 
+\section{Relazione fondamentale tra grado dei vertici e numero dei lati di un grafo finito}
+Sia $G=(V,\varepsilon)$ un grafo finito, allora $\sum\limits_{v\in V}deg(v)=2|\varepsilon|$.
+\subsubsection{Dimostrazione}
+Siano $v_1,\cdots, v_n$ tutti i vertici di $G$ e siano $e_1,\cdots, e_k$ i lati di $G$. Per ogni $i\in\{1,\cdot, n\}$ e per ogni $j\in\{1,cdots, k\}$, si definisca $m_{i,j}\in
+\{0,1\}:=\begin{cases}0&v_i\not\in e_j\\1&v_i\in e_j\end{cases}$. Allora per la propriet\`a commutativa della somma $\sum\limits_{i=1}^n\sum\limits_{j=1}^k m_{i,j}=\sum
+\limits_{j=1}^k\sum\limits_{i=1}^n m_{i,j}$. Per un $i$ fissato il numero $\sum\limits_{j=1}^k m_{i,j}=|\{j|v_i\in e_j\}|$, ovvero il numero di lati che contengono $v_i$, 
+ovvero $\sum\limits_{j=1}^k m_{i,j}=deg_G(v_i)$, pertanto il lato sinistro \`e uguale a $\sum\limits_{i=1}^ndeg_g(v_i)$, ovvero la somma dei gradi di tutti i vertici. 
+Considerando ora la parte destra, per un $j$ fissato si ha che $\sum\limits_{i=1}^nm_{i,j}=|\{j|v_i\in e_j\}|$, che \`e uguale a due dato che ogni lato contiene due vertici.
+Si ha pertanto che la parte destra \`e $2k=2|\varepsilon|$. Per concludere $\sum\limits_{i=1}^ndeg_G(V_i)=2|\varepsilon|$. 
+\section{Lemma delle strette di mano}
+In un grafo finito il numero di vertici con grado dispari \`e pari. Inoltre dati due grafi $G$ e $G'$ isomorfi di $f$, allora $deg_G(v)=deg_G(f(v))$.
+\section{Score di un grafo}
+\subsubsection{Definizione}
+Sia $G$ un grafo finito con vertici $v_1,\cdots, v_n$, si definisce lo score di $G$ come la successione finita dei gradi dei suoi vertici, a meno di riordinamento. 
+Equivalentemente $score(G)=(deg(v_1)_G,\cdots, deg_G(v_n))$. Lo score con i gradi crescenti \`e quello canonico. 
+\subsubsection{Osservazioni}
+\begin{itemize}
+\item Sia $G$ un grafo finito e sia $V(G)=\{v_1,\cdots, v_n\}$, vale la relazione fondamentale; $2|\varepsilon(G)|=\sum\limits_{i=1}^ndeg_G(V_i)$, equivalentemente 
+$score(G)=(d_1,\cdots, d_n)$, allora $\varepsilon(G)=\frac{1}{2}(\sum\limits_{i=1}^nd_i)$.
+\item Siano $G$ e $G'$ due grafi finiti isomorfi, allora $scoreG)=score(G')$, ovvero $G\simeq G'\Rightarrow score(G)=score(G')$. Essedo la funzione un isomorfismo porta lati da 
+$V(G)$ a lati di $V(G')$, pertanto se \`e isomorfismo $\forall v\in V(G), deg_G(V)=deg_{G'}(f(v)$. L'implicazione inversa \`e falsa.
+\end{itemize}
+\subsection{Teorema dello score}
+Sia $d=(d_1,\cdots, d_n)$ una sequenza di numeri naturali, con $n>1$ e sia $d_1\le\cdots\le d_n$, e si denoti la sequenza $d'=(d'_1,\cdots, d'_n)$, dove $d'_i=\begin{cases}
+d_i&i<n-d_n\\d_i-1&i\ge n-d_n\end{cases}$. Allora $d$ \`e lo score di un grafo se e solo se $d'$ \`e lo score di un grafo. 
+\section{Ostruzioni all'esistenza dei grafi}
+\subsubsection{Grado e numero dei vertici}
+Se $G=(V,E)$ \`e un grafo $\forall v\in V,deg_G(v)\le n-1 $
+\subsubsection{Numero di vertici con grado massimo}
+Se nello score di un grafo si trovano $m$ vertici con grado massimo, lo score minimo dovr\`a essere $m$. 
+\subsubsection{Lemma delle strette di mano}
+Il lemma delle strette di mano fornisce una condizione necessaria all'esistenza del grafo.
+\subsubsection{Vertici con grado massimo}
+Siano $n$ vertici con grado massimo in uno score, allora il numero di vertici con $deg_G(v)\ge n$ devono essere la somma dei gradi massimi meno $n$.
+\subsubsection{Grafi con grado massimo 2}
+Sia $d=(d_1,\cdots, d_n)\in\mathbb{N}$ tali che $0\le d_1\le\cdots\le d_n$ e che $d$ soddisfi il lemma delle strette di mano, ovvero il numero di volte in cui compare $1$ \`e 
+pari, allora 
+\begin{enumerate}
+\item Se non compare mai $1$ \`e lo score di un grafo se $m\ge 3\lor m=0$, dove $m$ \`e il numero di vertici con grado $2$.
+\item Tra i vertici del grafo ce ne sono $\ge 0$ con grado $0$, $2k+2\ge 2$ con grado $1$ e $\ge 0$ con grado $2$. 
+\end{enumerate}
+\section{Grafi particolari}
+\subsection{Grafo 2-connesso}
+\subsubsection{Definizione}
+Sia $G$ un grafo e sia $v\in V(G)$. Si supponga che $|V(G)|\ge 2$. Si definisca $G-v:=(V(G)\backslash \{v\}, \{e\in\varepsilon(G)|v\not\in e\})$. Un grafo $G=(V,\varepsilon(G
+))$ si dice 2-connesso se $|V|\ge 3$ e $\forall v \in V, G-v$ \`e connesso. 
+\subsubsection{Osservazione}
+Un grafo 2-connesso $\Rightarrow$ grafo connesso. Sia $G$ 2-connesso $\Rightarrow G-w$ \`e connesso.
+\subsubsection{Osservazione}
+Ogni ciclo \`e due connesso.
+\subsection{Vertici isolati e foglie}
+Sia $G$ un grafo e $v\in V(G)$, se $deg_G(v)=0$ $v$ \`e un vertice isolato di $G$. Se $deg_G(v)=1$ $v$ si dir\`a foglia. Un grafo connesso non ha vertici isolati, un grafo 
+due connesso non ha foglie. Tutte le entrate di uno score il cui valore minore maggiore di due.
+\subsection{Grafi hamiltoniani}
+\subsubsection{Definizione}
+Un grafo con almeno tre vertici si dice hamiltoniano se esiste in ciclo del grafo che contiene tutti i vertici. 
+\subsubsection{Osservazione}
+Un grafo hamiltoniano \`e sempre due connesso. Si consideri $G$ un grafo hamiltoniano, pertanto esiste un sottografo $H$ di $G$ tale che $V(H)=V(G)$ e $H$ \`e un ciclo. $
+\forall w\in V(G)=V(H)$, $G-w$ \`e connesso, essendo $H-w$ un cammino. L'implicazione inversa non \`e vera.

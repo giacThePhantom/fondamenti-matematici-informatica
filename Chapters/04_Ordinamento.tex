@@ -1,0 +1,33 @@
+\chapter{Insiemi ordinati}
+Sia $X$ un insieme e $R$ una relazione binaria su $X$, $R$ si dice ordinamento parziale o relazione d'ordine parziale se valgono le seguenti propriet\`a $\forall 
+x,y,z\in X$:
+\begin{itemize}
+\item Riflessiva: $xRx$.
+\item Antisimmetrica: $(xRy\wedge yRx)\Rightarrow x=y$.
+\item Transitiva: $(xRy\wedge yRz)\Rightarrow xRz$.
+\end{itemize}
+Se inoltre vala la tricotomia: $xRy\lor yRx$ allora si dice ordinamento totale. Una coppia $(X, R)$ in cui $R$ \`e un ordinamento si dice insieme ordinato.
+\subsubsection{Osservazioni}
+\begin{itemize}
+\item Le relazioni d'ordine si scrivono con simboli del tipo $\le$ o $\preceq$. Con $x\succeq y$ si intende $y\preceq x$, mentre $x\prec y$ implica $x\preceq y
+\wedge x\neq y$.
+\item In questi termini $(\mathbb{N}, \le)$ risulta un insieme totalmente ordinato.
+\end{itemize}
+\section{Ordinamento dei naturali}
+Attraverso la somma \`e possibile definire la nozione di ordinamento dei naturali: siano $n,m\in\mathbb{N}$, si dir\`a che $n\le m$ se $\exists k\in
+\mathbb{N}:m=n+k$
+\subsubsection{Osservazione}
+Si pu\`o vedere $\le$ come un sottoinsieme di $\mathbb{N}\times\mathbb{N}$, pi\`u precisamente $\le=\{(m,m)\in\mathbb{N}\times\mathbb{N}|\exists k\in
+\mathbb{N}:n+k=m\}$.
+\subsubsection{Propriet\`a}
+$\forall n,m,k,h\in\mathbb{N}$
+\begin{itemize}
+\item $n\le n$
+\item $(n\le m\wedge m\le n)\Rightarrow m=n$
+\item $(n\le m\wedge m\le k)\Rightarrow n\le k$
+\item $m\le n\lor n\le m$
+\item $n\le m\Rightarrow n+k\le m+k$
+\item $n\le m\wedge k\ge 1\Rightarrow nk\le mk$
+\item $n\le m\wedge k\le h\Rightarrow n+k\le m+h$
+\item $n\le m\wedge k\le h\Rightarrow nl\le mh$
+\end{itemize}

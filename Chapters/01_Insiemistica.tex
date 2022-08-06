@@ -1,0 +1,52 @@
+\chapter{Insiemi e operazioni su insiemi}
+\section{Concetti primitivi}
+\begin{itemize}
+\item Insieme
+\item Elemento di un insieme
+\end{itemize}
+\section{Teoria degli insiemi}
+\subsection{Concetto di appartenenza}
+Considerando un insieme come una collezione di oggetti detti elementi \`e necessario affinch\`e un oggetto sia un insiem che si possa sempre stabilire se qualcosa \`e un suo elemento
+($x\in A$) o no ($x\not\in A$). 
+\subsubsection{Paradosso di Russell}
+Si consideri l'oggetto $A=\{x|x\not\in x\}$. Si supponga che $A$ cos\`i definito sia un insieme, ovvero $A$ \`e l'insieme degli elementi $x$ tali che $x$ non \`e un elemento di $x$. Provando a stabilire se $A\in A$ si ottiene:
+\begin{itemize}
+\item Se $A\in A$ dalla definizione di $A$ segue $A\not\in A$.
+\item Se $A\not\in A$ allora per definizione di $A$ segue $A\in A$ 
+\end{itemize}
+Da queste considerazioni deriva che $A$ non \`e un insieme in quanto non si pu\`o decidere se un elemento appartiene o no. 
+\section{Assiomi}
+\subsection{Estesionabilit\`a}
+Dati due insiemi $A$ e $B$ si dice che $A=B\Leftrightarrow(\forall x: x\in A\Leftrightarrow x\in B)$
+\subsection{Esistenza del vuoto ($\mathbf{\exists\emptyset}$)}
+Esiste un insieme $\emptyset$, detto insieme vuoto, caratterizzato dal fatto di non contenere alcun elemento: $\exists\emptyset: \forall x, x\not\in\emptyset$.
+\subsubsection{Osservazioni}
+\begin{itemize}
+\item L'assioma di estensionalit\`a garantisce l'unicit\`a dell'insieme vuoto.
+\item Sia $P(x)$ una propriet\`a attribuile a $x$, allora $\forall x\;\; x\in\emptyset\Rightarrow P(x)$ \`e sempre vera.
+\end{itemize}
+\subsection{Separazione}
+Sia $X$ un'insieme e sia $P$ una propriet\`a esprimibile in termini del linguaggio della teoria degli insiemi allora $\{x\in X|P(x)\}$ \`e un insieme
+\section{Sottoinsiemi}
+Siano $A$ e $B$ due isiemi, si dice che:
+\begin{itemize}
+\item si dice che $A$ \`e contenuto in $B$, scritto $A\subset B$ (non si intende strettamente contenuto: $A\subset A$), se $\forall x:x\in A\Rightarrow x\in B$. Si dice che $A$
+\`e un sottoinsieme di $B$.
+\item $A$ \`e un sottoinsieme proprio di $B$ se $A$ \`e strettamente contenuto in $B$, ovvero se $A\underset{\neq}{\subset}B\Leftrightarrow \forall x:x\in A\Rightarrow c\in B$ e 
+$\exists y \in B:y\not\in A$
+\end{itemize}
+\subsubsection{Insieme universo}
+Se esistesse l'insieme $\Gamma$ di tutti gli insiemi allora $\{x|x\not\in X\}=\{x\in\Gamma|x\not\in x\}$, che genera un paradosso di Russell.
+\section{Operazioni tra insiemi}
+\begin{itemize}
+\item \textbf{Intersezione}: $X\cap Y :=\{x|x\in X\wedge x\in Y\}$.
+\item \textbf{Differenza}: $X\backslash Y=\{x|x\in X\wedge x\not\in Y$. Se $Y\subset X$ la differenza si dice il complementare di $Y$ in $X$ ($C_X(Y)$).
+\item \textbf{Unione}: $X\cup Y:=\{x|x\in X\lor x\in Y\}$.
+\item \textbf{Prodotto cartesiano}: $X\times Y:=\{(x,y)|x\in X, y\in Y\}$.
+\item \textbf{Insieme delle parti}: Insieme delle parti di $X$ $2^X=B(X)=\{A|A\subset X\}$.
+\item Sia $I$ un insieme non vuoto e $\forall i\in I$ \`e dato un insieme $X_i$ si definiscono:
+\begin{itemize}
+\item \textbf{Intersezione arbitraria}: $\bigcap\limits_{i\in I}X_i=\{x|\forall i\in I, x\in X_i\}$
+\item \textbf{Unione arbitraria}: $\bigcup\limits_{i\in I}=\{x|\exists i\in I, x\in X_i\}$
+\end{itemize} 
+\end{itemize}

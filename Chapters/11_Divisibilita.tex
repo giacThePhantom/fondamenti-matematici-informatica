@@ -1,0 +1,95 @@
+\chapter{Divisibilit\`a}
+\subsubsection{Definizione}
+Dati due interi $n,m$ si dice che $n$ \`e un divisore di $m$ (o che $m$ \`e un multiplo di $n$) se $\exists k\in\mathbb{Z}:m=nk$. Si indica con $n|m$.
+\subsubsection{Numeri primi}
+Il numeri $n$ si dice primo se i suoi unici divisori sono $\pm 1, \pm n$.
+\section{Propriet\`a}
+\begin{enumerate}
+\item $n|m\wedge m|q\Rightarrow n|q$.
+\item $n|m\wedge m|n\Rightarrow n0\pm m$.
+\end{enumerate}
+\subsubsection{Dimostrazione}
+\begin{enumerate}
+\item Se $m=kn$ e $q=hm$ allora $q=hkm=(hk)m$, ossia $n|q$.
+\item Se $n=mk$ e $m=nh$ allora $m=hkm$, quindu $m(1-hk)=0$, perci\`o $m=n=0$, oppure $1-hk=0$, allora $h=k=\pm 1$, pertanto $n=\pm m$.
+\end{enumerate}
+\section{Massimo comune divisore}
+\subsubsection{Definizione}
+Dati due interi $n$e $m$ entrambi non nulli, si dice che $d$ \`e un massimo comune divisore tra $n$ e $m$ se:
+\begin{enumerate}
+\item $d|n\wedge d|m$.
+\item $c|n\wedge c|m\Rightarrow c|d$.
+\end{enumerate}
+SI dir\`a che $d$ \`e il massimo comune divisore di $n$ e $m$ se \`e un massimo comune divisore positivo, viene indicato con $(n,m)$.
+\subsection{Unicit\`a del massimo comune divisore}
+Se $d$ e $d'$ sono due massimi comunei divisori tra $n$ e $m$ allora $d'=\pm d$.
+\subsubsection{Dimostrazione}
+Essendo $d$ \`e un divisore comune di $n$, $m$ e  $d'$ il massimo comune divisoresi ha che $d|d'$, scambiando i ruoli di $d$ e $d'$ si ottiene $d'|d$, pertanto per le propriet\`a della divisibilit\`a $d'=\pm 
+d$.
+\subsection{Esistenza del massimo comune divisore}
+Dati due numeri $n, m\in\mathbb{Z}$ non entrambi nulli esiste ilmassimo comune divisore di $n$ e $m$. 
+\subsubsection{Dimostrazione}
+Si consideri l'insieme $S=\{s\in\mathbb{Z}|s>0, \exists x,y\in\mathbb{Z}:s=nx+my\}$. $S\neq\emptyset$ dato che $nm+mm>0$ (dato che $m$ e $n$ sono entrambi non nulli). Sia $d=nx+my=\min S$, si 
+dimostri che $d$ \`e il massimo comune divisore. Se $c|n\wedge c|m$ allora $n=ck$ e $m=ch$, perci\`o $d=nx+my=xkx+chy=c(kx+hy)$, ossia $c|d$. Si dimostri ora che $d|n$. Si consideri ora la divisione
+euclidea tra $n$ e $d$, ovvero $n=dq+r$ con $0\le r<d$, se $r>0$ allora $r=n-dq=n-(nx+my)q=n(1-qx)+(-m)y$ \`e un elemento di $S$. Questo \`e assurdo perch\`e $r<d$ e $d=\min S$, pertanto $r=0$, 
+ossia $d|n$. Si prova in modo analogo che $d|m$. 
+\subsection{Numeri coprimi}
+$n,m\in\mathbb{Z}$ non entrambi nulli si dicono comprimi se $(n,m)=1$.
+\subsubsection{Osservazione}
+$(n,m)=1\Leftrightarrow\exists x,y\in\mathbb{Z}: nx+my=1$, in particolare $(n,n+1)=1\forall n$, infatti $1=(n+1)1+n(-1)$.
+\subsection{Massimo comune divisore e numeri coprimi}
+Sia $d=(n,m)$, allora $(\frac{n}{d},\frac{m}{d})=1$.
+\subsubsection{Dimostrazione}
+$d=nx+my$, perci\`o $1=\frac{n}{d}x+\frac{m}{d}y$.
+\section{Algoritmo di Euclide}
+Siano $n,m\in\mathbb{Z}, m\neq 0$. Sia $n=mq+r$ e la divisione euclidea di $n$ per $m$ allora $\{c\in\mathbb{Z}|c|n\wedge c|m\}=\{c\in\mathbb{Z}|c|m\wedge c|r\}$, in particolare quindi $(n,m)=(m,r)$.
+\subsubsection{Dimostrazione}
+Se $c|n$ e $c|m$ allora $n=ch$ e $m=ck$, perci\`o $r=n-mq=ch-ckq=c(h-kq)$, ossia $x|r$ e $c|m$, viceversa se $x|r$ e $c|m$ allora $m?ch$ e $r=ck$, pertanto $n=mq+r=chq+ck=c(hq+r)$, ossia $c|n$ 
+e $c|m$.
+\section{Propriet\`a dei numeri coprimi}
+\begin{enumerate}
+\item $(n,m)=1\wedge n|mq\Rightarrow n|q$.
+\item $(n,m)=1\wedge n|q\wedge m|q\Rightarrow nm|q$.
+\end{enumerate}
+\subsubsection{Dimostrazione}
+\begin{enumerate}
+\item Se $(n,m)=1$ allora esistono $x,y\in\mathbb{Z}$ tali che $1=nx+my$, perci\`o $q=nqx+mqy$. Pertanto se $n|mp$, esiste $h$ tale che $mq=nh$, pertanto $q=nqx+nhy=n(qx+hy)$.
+\item $n|q$, pertanto $q=nh$, dato che $m|q=nh$ e $(n,m)=1$, allora per la prima si ha che $m|h$, ovvero $h=km$, perci\`o $q=nh=nmk$, ossia $nm|q$.
+\end{enumerate}
+\subsection{Corollario}
+$p$ \`e primo se e solo se $\forall n,m\in\mathbb{Z}$ si ha che $p|nm\Rightarrow p|n$ oppure $p|m$.
+\subsubsection{Dimostrazione}
+Si supponga che $p|nm$, dato che $p$ \`e primo, allora $(p,n)=1$ e per la proposizione precedente si ha che $p|m$. Viceversa si supponga che $\forall n,m\in\mathbb{Z}$ si ha che $p|nm\Rightarrow p|n$ 
+oppure $p|m$ allora se $p=dh$ allora $p|dh$, pertanto $p|d$, pertanto, come visto precendentemente $d=\pm p$ e $h=\pm 1$ oppure $p|h$, quindi $h=\pm p$ e $d=\pm 1$.
+\section{Minimo comune multiplo}
+\subsubsection{Definizione}
+Dati due interi $n,m\in\mathbb{Z}$ si dice che $M$ \`e un minimo comune multiplo di $n$ e $m$ se:
+\begin{enumerate}
+\item $n|M$ e $m|M$.
+\item Se $n|c$ e $m|c$ allora $M|c$.
+\end{enumerate}
+Come nel caso del massimo comune divisore si dimostra che due minimi comuni multipli sono uguali a meno del segno, pertanto si chiama minimo comune multiplo quello positivo e viene indicato con $[n,m]$.
+\subsection{Esistenza}
+Siano $n,m\in\mathbb{Z}$ non entrambi nulli allora esiste il minimo comune multiplo tra $n$ e $m$.
+\subsubsection{Dimostrazione}
+Sia $M=\frac{nm}{(n,m)}=n'm'(n,m)$ dive si \`e posto $n=n'(n,m)$ e $m=m'(n,m)$. Chiaramente allora $M=nm'=n'm$, pertanto $n|M$ e $m|M$. Se $n|c$ e $m|c$ allora $(n,m)|c$, pertanto posto 
+$c=c'(n,m)$ si ha che $n'|c'$ e $m'|c'$. Dato che $(n',m')=1$, come visto precedentemente si ha che $n'm'|c'$ perci\`o che $M=n'm'(n,m)|c'(n,m)=c$.
+\section{Teorema fondamentale dell'algebra}
+$\forall n\in\mathbb{Z}, n\ge 2$ esistono numeri primi $p_1,p_2,\cdots, p_k>0$ tali che $n=p_1p_2\cdots p_k$. Se anche $q_1,\cdots, q_h$ esiste una bigezione $\sigma:\{1,2,\cdots,h\}\rightarrow\{1,2,
+\cdots k\}$ tale che $q_i=p_{\sigma(i)}$. Ovvero ogni intero maggiore di $1$ si scrive in modo unico, a meno dell'ordine, come prodotto di numeri interi positivi.
+\subsection{Dimostrazione}
+Si proceda per induzione si $n$. Se $n=2$ non c'\`e nulla da dimostrare in quanto primo. Si supponga $n>2$ e che la tesi sia vera $\forall k<n$. Se $n$ \`e primo non c'\`e nulla da dimostrare, se $n$ non \`e 
+primo allora esistono due numeri $d_1d_2$ con $1<d_1,d_2<n$ tali che $n=d_1d_2$. Per ipotesi di induzione esistono dei primi positivi $p_i$ e $q_j$ tali che $d_1=p_1\cdots p_{k_1}$ e $d_2=q_1\cdots 
+q_{k_2}$, allora $n=p_1\cdots p_{k_1}q_1\cdots q_{k_2}$ \`e prodotto di primi positivi.
+\subsubsection{Unicit\`a}
+Sia $n=p_1\cdots p_k=q_1\cdots q_h$ con $p_i$ e $q_j$ primi positivi e $k\le h$. Si proceda per induzione su $k$. Se $k=1$ allora $n=p_1=q_1\cdots q_h$, quindi $q_j|p_1\forall j$  e dato che $p_1$ \`e
+primo ogni $q_j=1\lor q_j=p_1$. Poich\`e per ipotesi ogni $q_j>1$ allora $q_j=p_1$ per ogni $j$. Se ora fosse $h>1$ si avrebbe $n=q_1\cdots q_h\ge q_1q_2=p_1^2>p_1=n$, che sarebbe assurdo, quindi
+$h=1$ e $q_1=p_1$. Sia ora $k>1$, allora $p_k|n=q_1\cdots q_h$, pertanto come visto precedentemente esiste un $j$ tale che $p_k|q_j$. Dato che sia $p_k$ che $q_j$ sono primi positivi, allora 
+$p_k=q_j$. Ora si ottiene che $p_1\cdots p_{k-1}=q_1\cdots q_{j-1}q_{j+1}\cdots q_h$, pertanto per ipotesi di induzione si pu\`o dire che le due fattorizzazioni hanno lo stesso numero di elementi, ossia 
+$k-1=h-1$ e che esiste una bigezione $\delta:\{1,\cdots, j-1,j+1,\cdots, k\}\rightarrow \{1,\cdots, k-1\}$ tale che $q_i=p_{\delta(i)}\forall i$. Si definisca ora $\sigma:\{1,2,\cdots,n\}\rightarrow\{1,2,
+\cdots n\}$ tale che $\sigma(i)=\begin{cases}k & i=j\\\delta(i) & i\neq j\end{cases}$. Si ottiene una bigezione tale che $q_i=p_{\sigma(i)}\forall i$.
+\subsection{Esistenza di infiniti numeri primi}
+I numeri primi sono infiniti.
+\subsubsection{Dimostrazione}
+Si supponga per assurdo che $p_1,\cdots, p_n$ siano tutti primi. Si consideri $n=p_1\cdots p_n+1$. Si nota che $n>1$ e non \`e divisibile per nessun $p_i$ e quindi $n$ sarebbe un numero maggiore di $1$ 
+che non \`e divisibile per nessun primo e ci\`o contraddice il teorema fondamentale dell'algebra.

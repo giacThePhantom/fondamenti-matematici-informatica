@@ -1,0 +1,60 @@
+\chapter{Cardinalit\`a}
+\section{Confronto di cardinalit\`a}
+\subsubsection{Definizione}
+Dati due insiemi $X$ e $Y$ si dir\`a che la cardinalit\`a di $X$ \`e minore della cardinalit\`a di $Y$, scritto $|X|\le|Y|$ se esiste una funzione iniettiva $f:X\rightarrow Y$.
+Si dir\`a che la cardinalit\`a \`e strettamente minore, o $|X|<|Y|$ se $|X|\le|Y|$ e $|X|\neq|Y|$. \`E immediato verificare che $|X|\le|Y|$ se e solo se $Y$ contiene un 
+sottoinsieme equipotente a $X$.
+\subsubsection{Propriet\`a}
+$\forall X,Y,Z$
+\begin{itemize}
+\item Riflessiva: $|X|\le|X|$.
+\item Transitiva: $|X|\le|Y|\wedge|Y|\le|Z|\Rightarrow|X|\le|Z|$.
+\item Verr\`a successivamente verificata la propriet\`a antisimmetrica.
+\end{itemize}
+Per dimostrare queste propriet\`a basta dimostrare che l'identit\`a e la composta di funzioni iniettive sono iniettive.
+\section{Cardinalit\`a di sottoinsiemi}
+Sia $X\subset Y\subset Z$ e che $|X|=|Z|$, allora $|Y|=|Z|$.
+\subsubsection{Dimostrazione}
+Sia $f:Z\rightarrow X$ una bigezione e $A_0=Z-Y$ e $A_{n+1}=f(A_n)$ e si ponga $A=\bigcup\limits_nA_n$. Si osservi che $f(A)\subset A\cap Y$ e che $f$ \`e una bigezione tra $f$ 
+e la sua immagine. Si definisca pertanto $g(x)=\begin{cases}f(z)&z\in A\\z&z\in Z-A\end{cases}$ e si provi che sia una bigezione: si hanno tre casi: $z_1, z_2\in A$: esssendo 
+$f$ iniettiva $g(z_1)=f(z_1)\neq g(z_2)=f(z_2)$; $z_1, z_2\in Z-a$, in questo caso $g(z_1)=z_1\neq g(z_2)=z_2$; $z_1\in A$ e $z_2\in Z-A$, in tal caso $g(z_1)=f(z_1)$ mentre
+$g(z_2)=z_2$. Pertanto $g$ \`e surgettiva. Sia ora $y\in Y$ pertanto o $y\in Y-A$e  allora $g(y)=y$ o $y\in A$. In questo caso esiste $i\in\mathbb{N}$ tale che $y\in A_i$, 
+inoltre, dato che $y\in Y$ e $A_0=Z-Y$ allora $i>0$. Perci\`o essendo $A_i=f(A_{i-1}$ esiste $z\in A_{i-1}: f(z)=y$, essendo $z\in A$ $g(z)=f(z)=y$.
+\section{Teorema di Cantor-Bernstein}
+Siano $X$ e $Y$ due insiemi e si suppongano $f:X\rightarrow Y$ e $g:Y\rightarrow X$ due funzioni iniettive, allora esiste una funzione bigettiva $h:X\rightarrow Y$.
+\subsubsection{Dimostrazione}
+Si osservi che $|X|=|f(X)|$ e che $|g(f(X))|=|f(X)|$, pertanto $|X|=|g(f(X))|$, inoltre $g(f(x))\subset g(Y)\subset X$, pertanto per il lemma precedente $|X|=|g(Y)|$, dato che
+$|g(Y)|=|Y|$ segue la tesi. 
+\section{Tricotomia dei cardinali}
+Per ogni coppia di insiemi $X$, $Y$, si ha $|X|\le|Y|\lor|Y|\le|X|$.
+\subsubsection{Osservazione}
+La relazione di avere cardinalit\`a minore o uguale di gode di tutte le propriet\`a di un ordinamento totale.
+\section{Operazioni tra cardinali}
+\begin{enumerate}
+\item $|X|+|Y|=|(X\times\{0\})\cup(Y\times\{1\})|$.
+\item $|X||Y|=|X\times Y|$.
+\item $|X|^{|Y|}=|X^Y|$.
+\item $2^{|X|}=|2^X|$.
+\end{enumerate}
+E tutte le propriet\`a analoghe alle operazioni tra numerali.
+\section{L'assioma del buon ordinamento}
+\subsection{Minimo}
+Sia $X$ un insieme e $\le$ un ordinamento su $X$ e $A\subset X$, si definir\`a $z\in A$ come minimo se $\forall x\in A, z\le x$. ($z=\min A$).
+\subsection{Buon ordinamento}
+Un ordinamento totale su $X$ si dice un buon ordinamento se ogni sottoinsieme non vuoto di $X$ ha un minimo.
+\subsection{Il buon ordinamento dei numeri naturali}
+L'ordinamento dei numeri naturali \`e un buon ordinamento.
+\subsubsection{Dimostrazione}
+Si supponga che l'insieme $A\subset\mathbb{N}$ non possegga minimo e si provi che $A=\emptyset$. Si costruisca $B$ come il complementare di $A$ e si dimostri per induzione che
+$\forall n\in\mathbb{N}, \{0,1,2,\cdots, n\}\subset B$. $0\not\in A$ se no sarebbe il suo minimo. Ora assumendo $\{0,1,2,\cdots, n\}\subset B$, allora $0,1,2,\cdots, n\not\in A
+$ e se $n+1\in A$ ne sarebbe il minimo, pertanto $n+1\in B$, pertanto $B=\mathbb{N}$ e $A=\emptyset$.
+\section{Il principio di induzione di seconda forma}
+Sia $P(n)$ una famiglia di affermazioni indicizzata su $\mathbb{N}$ e si supponga che:
+\begin{enumerate}
+\item $P(0)$ sia vera.
+\item $\forall n>0$, $P(k)$ vera $\forall k<n\Rightarrow P(n)$.
+\end{enumerate}
+\subsubsection{Dimostrazione}
+Sia $A=\{n\in\mathbb{N}|P(n)$ non \`e vera$\}$ e si supponga per assurdo che $A\neq\emptyset$, allora per la propriet\`a del buon ordinamento $A$ ha un minimo $n\neq 0$ in 
+quanto $P(0)$ \`e vera. Inoltre se $k<n$ allora $k\not\in A$ in quanto $n=\min A$, pertanto dalla due segue che $P(n)$ \`e vera, pertanto $n\not\in A$, che \`e una 
+contraddizione.

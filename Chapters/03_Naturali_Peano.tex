@@ -1,0 +1,70 @@
+\chapter{Numeri naturali, assiomi di Roano}
+Si definisca l'insieme $\mathbb{N}$ dei numeri naturali come l'insieme descritto dagli assiomi enunciati.
+\section{Assiomi di Peano}
+\begin{enumerate}
+\item $0\in\mathbb{N}$ detto zero.
+\item $\exists succ:\mathbb{N}\rightarrow\mathbb{N}$ tale che sia iniettiva.
+\item $succ(\mathbb{N}\subset\mathbb{N}\backslash\{0\}$.
+\end{enumerate}
+\section{Assioma di induzione}
+\subsection{Enunciato}
+Sia $n\in\mathbb{N}$, $n\neq 0$, allora esiste un unico $m\mathbb{N}$ tale che $succ(m)=n$. Tale $m$ viene chiamato predecessore di $n$.
+\subsection{Dimostrazione}
+Si supponga per assurdo che esista un $m\neq 0$ tale che $succ(n)\neq m\forall n$, allora sia $A=\mathbb{N}\backslash\{m\}$. Si nota che $0\in A$ in quanto $m\neq 0$. Se $n\in A$, allora
+$succ(n)\neq m$, perci\`o $succ(n)\in A$, perci\`o $A=\mathbb{N}$, che \`e una contraddizione. \`E pertanto dimostrata l'esistenza di tale numero, la sua unicit\`a deriva dall'
+iniettivit\`a della funzione $succ$.
+Sia $A\subset\mathbb{N}$, si supponga che $0\in A$ (base dell'induzione) e $\forall  n\in\mathbb{N}:n\in A\Rightarrow succ(n)\in A$, ovvero se $n\in A$ (ipotesi induttiva) allora 
+si pu\`o dimostrare che $succ(n)\in A$ (passo induttivo).
+\section{Principio di induzione di prima forma}
+Il principio di induzione \`e una diretta conseguenza dell'assioma di induzione.
+\subsection{Enunciato}
+Sia $\{P(n)\}_{n\in\mathbb{N}}$ una famiglia di affermazioni $P(n)$ indicizzata su $n\in\mathbb{N}$ tale che:
+\begin{itemize}
+\item $P(0)$ \`e vera (base di induzione).
+\item $\forall n\in\mathbb{N}$, $P(n)$ vera $\Rightarrow P(succ(n))$ \`e vera (passo induttivo).
+\end{itemize}
+Allora $P(n)$ \`e vera $\forall n\in\mathbb{N}$.
+\subsection{Dimostrazione}
+Sia $A=\{n|P(n)$ \`e vera$\}$, allora $0\in A$ e se $n\in A$ allora vale $P(n)$, pertanto vale $P(succ(n))$, ovvero $succ(n)\in A$, pertanto per l'assioma di induzione $A=\mathbb{N}$.
+\subsection{Principio di induzione "shiftato"}
+Del tutto analogo al principio enunciato precedentemente, l'unica differenza \`e che la prima affermazione vera non \`e $P(0)$ ma $P(n)$. Tale affermazione sar\`a conseguentemente
+vera $\forall m\in\mathbb{N}:m\ge n$.
+\section{Il teorema di ricorsione}
+Questo teorema \`e necessario per riuscire a definire somma, prodotto e relazione d'ordine tra naturali.
+\subsection{Enunciato}
+Sia $X$ un insieme e $h:\mathbb{N}\times X\rightarrow\mathbb{N}$ una funzione e $c\in X$, allora $\exists! f:\mathbb{N}\rightarrow X$ tale che:
+\begin{itemize}
+\item $f(0)=c$
+\item $f(succ(n))=h(n,f(n))\;\;\forall n\in\mathbb{N}$
+\end{itemize}
+\subsection{Dimostrazione}
+\subsubsection{Unicit\`a di $\mathbf{f}$}
+Si supponga che esistono due funzioni $f$ e $g$ che dimostrano tale proposizione usando il principio di induzione: dal primo punto si verifica che per $n=0$ $f(n)=c=g(n)$, 
+mentre dal secondo si ottiene che $f(succ(n))=h(n,f(n))$, mentre $g(succ(n))=h(n,g(n))$, ma dato che $f(n)=g(n)$, si ottiene che $f(succ(n))=h(n,f(n))=h(n,g(n))=g(succ(n))$.
+\subsubsection{Esistenza di $\mathbf{f}$}
+Per la definizione di funzione, per provarne l'esistenza si deve trovare un insieme $f\subset\mathbb{N}\times X$ tale che $\forall n\in\mathbb{N}\exists! c\in X:(n,x)\in f$ e 
+che, traducendo le richieste del teorema:
+\begin{itemize}
+\item $(0,c)\in f$
+\item $\forall n\in\mathbb{N}, (x,n)\in f\Rightarrow(succ(n),h(n,x))\in f$
+\end{itemize}
+Sia $\Omega=\{Z\subset\mathbb{N}\times X|Z\text{ verifica i punti del teorema}\}$, si necessita di trovare un elemento di $\Omega$ che sia una funzione. Sia $f=\bigcap\limits_{Z
+\in\Omega}Z$. Essendo $f$ l'intersezione di tutti gli elementi di $\Omega$, necessariamente $\forall Z\in\Omega\;\;f\subset Z$. Si provi ora che $f\in\Omega$: infatti $(0,c)\in f
+$. Se $(n,x)\in f$, allora $(n,x)\in Z\;\;\forall Z\in\Omega$. Si provi ora che $f\in\Omega$: $(o,c)\in Z\;\;\forall Z\in\Omega$, pertanto $(0,c)\in f$. Se $(n,x)\in f$ allora 
+$(n,x)\in Z\forall Z\in\Omega$, ma siccome $\forall Z\in\Omega$
+\section{Operazioni tra naturali}
+Il teorema di ricorsione permette di definire la somma e il prodotto tra numeri naturali.
+\subsection{Somma}
+Dato $n\in\mathbb{N}$ si definisce la somma $m\rightarrow m+n$ ricorsivamente nel seguente modo:
+\begin{gather*}
+n+0=n\\
+n+succ(m)=succ(n)+m
+\end{gather*}
+\subsubsection{Osservazioni}
+Se si definisce $1$ come $succ(0)=1$, allora $\forall n\in\mathbb{N}\;\;succ(n)=n+1$
+\subsection{Prodotto}
+Dato $n\in\mathbb{N}$ si definisce il prodotto $m\rightarrow m\cdot n$ ricorsivamente nel seguente modo:
+\begin{gather*}
+n\cdot 0=0
+n\cdot(m+1)=n\cdot m+n
+\end{gather*}

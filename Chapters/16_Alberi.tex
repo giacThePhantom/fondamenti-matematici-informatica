@@ -1,0 +1,16 @@
+\chapter{Gli alberi}
+\subsubsection{Definizione}
+Si dice albero un grafo che sia connesso e senza cicli. Si dice foresta un grafo senza cicli. 
+\subsection{Condizione necessaria per una foresta}
+Un grafo \`e una foresta se e soltanto se le sue componenti connesse sono alberi. 
+\subsubsection{Dimostrazione}
+Si supponga di avere una foresta $F$ e si consideri una delle sue componenti connesse $F'$. Se $F'$ non fosse un albero dovrebbe contenere un ciclo, pertanto $F$ non sarebbe 
+una foresta in quanto un ciclo $C$ , $C<F'<F\Rightarrow C<F$.
+\section{Teorema}
+Sia $T=(V,\varepsilon)$ un grafo anche infinito, allora le seguenti affermazioni sono equivalenti:
+\begin{enumerate}
+\item $T$ \`e un albero.
+\item $\forall v, v'\in V,\exists!$ cammino in $T$ da $v$ a $v'$.
+\item $T$ \`e connesso e $\forall e\in\varepsilon$, il grafo $T-e=G(V, \varepsilon\backslash\{w\}$ \`e sconnesso. 
+\item $T$ non ha cicli e $\forall e\in \binom{V}{2}\backslash\varepsilon$, $T+e=(V, \varepsilon\cup\{e\})$ ha cicli. 
+\end{enumerate}

@@ -1,0 +1,114 @@
+\chapter{Congruenza}
+\subsubsection{Definizione}
+Siano $a,b\in\mathbb{Z}$, si dice che $a$ \`e congruo a $b$ modulo $n$ , ovvero $a\equiv b\mod n$ se $n|a-b$.
+\subsection{Propriet\`a}
+Valgono le seguenti propriet\`a $\forall a,b,c,n\in\mathbb{Z}$:
+\begin{enumerate}
+\item Riflessiva: $a\equiv a\mod n$.
+\item Simmetrica: $a\equiv b\mod n\Rightarrow b\equiv a\mod n$.
+\item Transitiva: $a\equiv b\mod n b\equiv c\mod n\Rightarrow a\equiv c\mod n$.
+\end{enumerate}
+\subsubsection{Dimostrazione}
+$\mathbf{1}$: $n|0=a-a$.\\
+$\mathbf{2}$: $n|a-b\Rightarrow a-b=kn$, pertanto $b-a=(-k)n$, perci\`o $n|b-a$, ovvero $b\equiv a\mod n$.\\
+$\mathbf{3}$: $a-b=kn$ e $b-c=hn$, allora $a-c=a-b+b-c=kn+hn=(k+h)n$, pertanto $a\equiv c\mod n$.
+\subsubsection{Osservazioni}
+Si ricordi la definizione di relazione di equivalenza: una relazione si dice di equivalenza se valgono le propriet\`a riflessiva, simmetrica e transitiva.
+\begin{enumerate}
+\item \`E prassi denotare le relazioni di equivalenza con $\sim,\equiv, \approx$.
+\item La definizione di congruenza in modulo $n$ pu\`o essere allora rienunciato dicendo che la relazione di congruenza in modulo $n$ \`e una relazione d'equivalenza su 
+$\mathbb{Z}$
+\end{enumerate}
+\section{Classi di equivalenza}
+Siano $X$ un insieme non vuoto e sia $\sim$ una relazione di equivalenza su $X$. La classe di equivalenza di $x\in X$ rispetto a $\sim$ \`e l'insieme: $[x]_{\sim}:=\{y\in X|y
+\sim x\}$. Il simbolo della relazione pu\`o essere omessso. 
+\subsection{Insieme quoziente}
+Si definisce l'inseme quoziente di $X$ modulo $\sim$ come l'insieme costituito da tutte le classi di equivalenza: $X/_\sim:=\{[x]_\sim\in P(X)|x\in X\}$.
+\subsection{Propriet\`a}
+Sia $X$ un insieme e $\sim$ una relazione di equivalenza su $X$, allora $\forall x,y,z\in X$:
+\begin{enumerate}
+\item $x\in [x]_\sim$.
+\item $[x]_\sim=[y]_\sim\Leftrightarrow x\sim y$.
+\item $[x]_\sim\cap[y]_\sim\neq\emptyset\Leftrightarrow [x]_\sim=[y]_\sim$.
+\end{enumerate}
+\subsubsection{Dimostrazione}
+$\mathbf{1}$: Si ottiene dalla propriet\`a riflessiva delle operazioni di equivalenza.\\
+$\mathbf{2}$: si supponga che $[x]_\sim=[y]_\sim$ vale $x\in[x]_\sim=[y]_\sim\Leftrightarrow x\sim y$. Si verifichi l'implicazione inversa considerando $z\in[x]$, allora $z\sim 
+x$ e per la propriet\`a transitiva delle relazioni di equivalenza $z\equiv y$, ovvero $z\sim y$, ossia $[x]\subset[y]$, scambiando i ruoli di $x$ e $y$ si ottiene la relazione
+inversa e pertanto $[x]=[y]$.\\
+$\mathbf{3}$: Se $z\in[x]\cap[y]$ allora $z\sim x$ e $z\sim y$, che per la propriet\`a transitiva e simmetrica verifica che $x\sim y$, pertanto $[x]=[y]$.
+\subsubsection{Osservazione}
+Le propriet\`a descritte sopra garantiscono che l'insieme delle classi di equivalenza di un insieme rispetto ad una relazione d'equivalenza costituisce una partizione 
+dell'insieme, ovvero sono una collezione $\mathcal{P}$ di sottoinsiemi di $X$ tali che:
+\begin{itemize}
+\item $\forall A\in\mathcal{P}, A\neq\emptyset$.
+\item $\bigcup\limits_{A\in\mathcal{P}}A=X$.
+\item $\forall A,b\in\mathcal{P}, A\neq B\Rightarrow A\cap B=\emptyset$.
+\end{itemize}
+\section{Classi di congruenza}
+\subsubsection{Definizione}
+Siano $a, n\in\mathbb{Z}$, si chiama classe di congruenza di $a$ modulo $n$ l'insieme $[a]_n=\{x\in\mathbb{Z}|x\equiv a\mod n\}$. Verr\`a indicato $\mathbb{Z}_{/ n
+\mathbb{Z}}=\{[a]_n|a\in\mathbb{Z}\}$.
+\subsubsection{Osservazioni}
+\begin{enumerate}
+\item $x\equiv a\mod n\Leftrightarrow n|(x-a)\Leftrightarrow \exists k\in\mathbb{Z}:x-a=kn\Leftrightarrow\exists k\in\mathbb{Z}:x=kn+a$, pertanto $[a]_n=\{a+kn|z\in\mathbb{Z}
+\}$.
+\item La classe di congruenza di $a$ modulo $n$ non \`e altro che la classe di equivalenza di $a$ rispetto alla relazione di equivalenza $\equiv\mod n$. $\mathbb{Z}_{/ 
+n\mathbb{Z}}$ \`e pertanto l'insieme quoziente. di $\mathbb{Z}$ rispetto a tale operazione. 
+\end{enumerate}
+\subsection{Propriet\`a}
+$\forall a,b\in\mathbb{Z}$:
+\begin{enumerate}
+\item $a\in [a]_n$.
+\item $[a]_n=[b]_n\Leftrightarrow a\equiv b\mod n$.
+\item $[a]_n\cap[b]_n\neq\emptyset\Leftrightarrow [a]_n=[b]_n$.
+\end{enumerate}
+\subsection{Le classi modulo n sono esattamente n}
+Se $n>0$ e $r$ \`e il resto della divisione euclidea di $a$ per $n$ allora $a\equiv r\mod n$.
+\subsubsection{Dimostrazione}
+$a=nq+r$, pertanto $n|nq=a-r$.
+\subsection{Corollario}
+Se $n>0$ allora $\mathbb{Z}_{/ n\mathbb{Z}}$ ha $n$ elementi.
+\subsubsection{Dimostrazione}
+Dalla proposizione dimostrata precedentemente e dalla seconda propriet\`a delle classi di congruenza segue immediatamente che l'insieme ha al pi\`u $n$ elementi, pi\`u 
+precisamente $[0]_n, [1]_n,\cdots, [n-1]_n$. D'altronde se $0\le h<k<n$ allora $0<k-h<n$, pertanto $n\not/(k-h)$, pertanto $[h]_n\neq[k]_m$.
+\subsubsection{Osservazione}
+\`E facile notare come mai le classi di congruenza modulo $n$ vengono anche chiamate classi di resto modulo $n$.
+\section{Somma e prodotto di classi di congruenza}
+Siano $a,b,a',b',n\in\mathbb{Z}$ e si supponga che $a\equiv a'\mod n$ e $b\equiv b'\mod n$, allora:
+\begin{enumerate}
+\item $a+b=a'+b'\mod n$.
+\item $a\cdot b=a'\cdot b'\mod n$.
+\end{enumerate}
+\subsubsection{Dimostrazione}
+$\mathbf{1}$: Se $n|(a-a')$ e $n|(b-b')$, allora $n|((a-a')+(b-b'))=((a+b)-(a'+b'))$.\\
+$\mathbf{2}$: $\exists k,h\in\mathbb{Z}$ tali che $a=a'+kn$ e $b=b'+hn$, allora moltiplicando membro a membro si ottiene $ab=a'b'+a'hn+b'kn+hkn^2=a'b'+n(a'h+b'k+hkn)$, da cui 
+segue immediatamente la tesi.
+\subsection{Operazioni tra classi di modulo n}
+La proposizione precedente permette di ben definire le operazioni di somma e prodotto tra le classi modulo $n$ ponendo: $[a]_n+[b]_n=[a+b]_n$ e $[a]_n[b]_n=[ab]_n$.
+\subsubsection{Dimostrazione}
+Se $[a]_n=[a']_n$ e $[b]_n=[b']_n$ allora per la seconda propriet\`a delle classi di congruenza segue che $a\equiv a'\mod n$ e $b\equiv b'\mod n$, pertanto dalla proposizione
+precedente $a+a'\equiv b+b'\mod n$ e $aa'\equiv bb'\mod n$, dalla stessa propriet\`a si ottiene perci\`o $[a+b]_n=[a'+b']_n$ e $[ab]_n=[a'b']_n$.
+\subsubsection{Osservazione}
+Le operazioni tra classi di congruenza godono delle stesse propriet\`a delle operazioni tra naturali con due importanti differenza:
+\begin{itemize}
+\item Ci possono essere classi diverse da $0$ che moltiplicate tra loro danno $0$.
+\item Se $n>0$ allora $\sum\limits_{i=1}^n 1=0\in\mathbb{Z}_{/n\mathbb{Z}}$.
+\end{itemize}
+\section{Teorema cinese del resto}
+Il sistema di congruenze:
+\begin{equation*}
+\begin{cases}
+x\equiv a\mod n\\
+x\equiv b\mod n
+\end{cases}
+\end{equation*}
+ha soluzione se e solo se $(n,m)|b-a$. Se $c$ \`e una soluzione del sistema allora gli elementi di $[c]_{[n,m]}$ sono tutte e sole le soluzioni del sistema.
+\subsubsection{Dimostrazione}
+Sia $c$ una soluzione del sistema , allora esistono $h,k\in\mathbb{Z}$, tali che $c=a+hn=b+km$, pertanto $a-b=km-hn$, dal fatto che $(n,m)|n$ e $(n,m)|m$ si ha che $(n,m)|a-b$.
+Viceversa si supponga che $(n,m)|a-b$ allora come visto precedentemente $\exists h,k\in\mathbb{Z}$ tali che $a-b=hn+km$, allora $a-hn=b-km$ e si ha evidentemente che $c$ 
+risolve entrambe le congruenze. Ora essendo $S=\{x\in\mathbb{Z}|x$ risolve il sistema$\}$, si deve provare che se $c$ \`e una soluzione allora $S=[c]_{[n,m]}$. Si supponga
+$S\subset [c]_{[n,m]}$. Sia $c'$ un'altra soluzione, allora $c=a+hn=b+km$ e $c'=a+h'n=bk'n$, pertanto sottraendo si ha $c-c'=a+hn-a'-h'n=(h-h')n\Rightarrow n|(c-c')$, inoltre
+$c-c'=b+km-b'-'m=(k-k')m\Rightarrow m|(c-c')$, pertanto $[n,m]|c-c'$, ossia $c'=c\mod [n,m]$, ovvero $c'\in [c]_{[n,m]}$. Si consideri $[c]_{[n,m]}\subset S$. Sia 
+$c'\in[c]_{[n,m]}$, ovvero $c'=c+h[n,m]$, dal fatto che $c\equiv a\mod n$ e che $h[n,m]\equiv 0\mod n$ segue per una proposizione precedente che $c'=c+h[n,m]\equiv a\mod n$, 
+in modo analogo si ha che $c'\equiv b\mod m$ perci\`o $c'\in S$.

@@ -1,0 +1,18 @@
+\chapter{La divisione euclidea}
+Supposta nota la definizione di $\mathbb{Z}$ come insieme dei numeri interi.
+\subsubsection{Definizione}
+Siano $n,m\in\mathbb{Z}$ con $m\neq 0$, allora esistono unici $q, r\in\mathbb{Z}$ tali che:
+\begin{align*}
+n=mq+r\\
+0\le r<|m|
+\end{align*}
+\subsection{Dimostrazione}
+\subsubsection{Esistenza}
+Si supponga che $n,m \in\mathbb{N}$ e si utilizzi il principio di induzione. Se $n=0$ basta considerare $q=r=0$. Si supponga $n>0$ e che la tesi sia vera $\forall k<n$. Se $n<m$
+basta prendere $q=0$ e $r=n$, altrimenti sia $k=n-m$, dato che $m\neq 0$, $0\le k<n$, pertanto per ipotesi di induzione esistono $q,r\in\mathbb{N}$ tali che $k=mq+r$ e $0\le 
+r<m$, ma allora $n=k+m=mq+r+m=(q+1)m+r$. Si supponga ora $n<0$ e $m>0$, allora $-n>0$, pertanto per il caso precedente si ha che esistono $q,r\in\mathbb{Z}$ tali che $-n=qm+r$ e 
+$0\le r<m=|m|$, pertanto $n=m(-q)-r=m(-q)+m-m-r=m(-1-q)+(m-r)$. Si consideri infine $m<0$, allora $-m>0$, pertanto per i due casi precedenti esistono $q, r\in\mathbb{Z}$ tali 
+che $n=(-m)q+r=m(-q)+r$ e $0\le r<-m=|m|$.
+\subsubsection{Unicit\`a}
+Si supponga che $n=mq+r$ e $n=mq'+r'$, con $0\le r,r'<m$. Si supponga ora $r'>r$, allora $m(q-q')=r'-r$, passando ai moduli $|m||q-q'|=|r-r'|<|m|$, da cui $0\le |q-q'|<1$, 
+pertanto $|q-q'|=0$, ovvero $q=q'$, allora dalla supposizione precedente si ottiene $r=r'$.

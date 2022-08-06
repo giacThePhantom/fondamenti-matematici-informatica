@@ -1,0 +1,77 @@
+\chapter{Relazioni e funzioni}
+\section{Relazione}
+Siano $X$ e $Y$ due insiemi. Un sotttoinsieme $R$ di $X\times Y$ si dice relazione tra $X$ e $Y$ se $(x,y)\in R$ si scrive anche $xRy$: $x$ \`e in $R$ relazione con $y$. 
+\section{Funzione}
+Sia $f$ una relazione tra $X$ e $Y$ $f$ si dice funzione da $X$ in $Y$ se $\forall x\in X\exists! y\in Y:(x,y)\in f), (xfy)$. $f:X\rightarrow Y$ \`e una funzione $(X,Y,f)$.
+\begin{itemize}
+\item $X$ \`e il doiminio di $f$.
+\item $Y$ \`e il codominio.
+\item $y$ si dice valore di $f$ in $x$ e si dice $f(x)$.
+\subsection{Osservazione}
+Sia $f:X\rightarrow Y$ una fuzione (vista come relazione). Si vuole definire $f$ come concetto primitivo che associa ad ogni $x\in X$ un unico elemento $y\in Y$
+\end{itemize}
+\subsection{Composizioni}
+Siano $f:X\rightarrow Y$ e $g:Y\rightarrow Z$ due funzioni. Si definisce composizione di $f$ con $g$ come la funzione $g\circ f=X\rightarrow Z$, con $(g\circ f)(x):=g(f(x))
+\forall x\in X$. 
+\subsection{Immagine}
+Sia $f:X\rightarrow Y$ una funzione e sia $A\subset X$. L'immagine di $A$ tramite $f$ \`e definita come: $f(A):=\{y\in Y|\exists x\in A, y=f(x)\}=\{f(x)\in Y|x\in A\}$. $f(X)$ si
+dice immagine di $f$. 
+\subsection{Controimmagine}
+Sia $f:X\rightarrow Y$ una funzione e sia $B\subset Y$. L'immagine inversa (o controimmmagine) di $B$ tramite $f$ \`e definita come: $f^{-1}(B):=\{x\in X|f(x)\in B\}$.
+\subsubsection{Singoletti ($f^{-1}(y)$) o fibra di $y$ sopra $f$}
+Se $B$ \`e formato da un solo elemento ($B=\{y\}$) si ottiene $f^{-1}(\{y\})=\{x\in X|f(x)=y\}$, si formalizza in questo modo il concetto di equazione.
+\subsection{Propriet\`a delle funzioni}
+Si $f:X\rightarrow Y$ $f$ si dice:
+\begin{itemize}
+\item \textbf{Iniettiva}: se $\forall x_1, x_2\in X$ con $x_1\neq x_2$ allora $f(x_1)\neq f(x_2)$, equivalentemente se $\forall x_1, x_2\in X$ tali che $f(x_1)=f(x_2)$, allora
+$x_1=x_2$
+\item \textbf{Surgettiva (suriettiva)}: se $f(X)=Y$, equivalentemente $\forall y\in Y, \exists x\in X$ tale che $f(x)=y$.
+\item \textbf{Bigettiva (o biiettiva)}: se al contempo iniettiva e surgettiva.
+\end{itemize}
+\subsection{Invertibilit\`a}
+Sia $f:X\rightarrow Y$ una funzione. Allora le seguenti proposizioni sono equivalenti:
+\begin{enumerate}
+\item $f$ \`e bigettiva.
+\item Esiste ed \`e unica una funzione $g:Y\rightarrow Y$ tale che $g\circ f=Id_x(x)$ e $f\circ g=Id_y(y)$.
+\end{enumerate}
+\subsubsection{Dimostrazione}
+$\mathbf{2\Rightarrow 1}$: $f$ \`e iniettiva: siano $x_1,x_2\in X$ tali che $f(x_1)=f(x_2)$, considero $g(f(x_1))=g(f(x_2)),\;\;(g\circ f)(x_1)=(g\circ f)(x_2)$, $Id_x(x_1)=Id_x(x_2),\;\; 
+x_1=x_2$, perci\`o $f$ \`e iniettiva. $f$ \`e surgettiva: sia $y\in Y$, allora $f(g(y))=(f\circ g)(y)=Id_y(y)=y$, perci\`o la $f$ \`e bigettiva.\\
+$\mathbf{1\Rightarrow 2}$: si supponga $f$ bigettiva. Sia $y\in Y$ si osserva che $f^{-1}(y)\neq\emptyset$ per surgettivit\`a di $f$ e $f^{-1}(y)=\{x_y\}$  per iniettivit\`a di 
+$f$, ad ogni punto $y$ si pu\`o perci\`o definire $g:Y\rightarrow X$ ponendo $g(y):=x_y$. Per costruzione $f(x_y)=y$, perci\`o $f(g(y))=(f\circ g)(x_y)=Id_y$ e se $y=f(x)$ allora
+$f(x)=f(g(f(x)))$, perci\`o $x=g(f(x))=(g\circ f)(x)$, ovvero $(g\circ f)(x)=Id_x$.\\
+\subsubsection{Definizione}
+Se $g$ esiste allora \`e unica ed \`e detta inversa di $f$ ($f^{-1}:Y\rightarrow X$).
+\section{Equipotenza di insieme}
+\subsection{Definizione}
+Dati $X$ e $Y$ due insiemi questi sono equipotenti (o meglio $X$ \`e equipotente a $Y$) indicato con $X\sim Y$ se esiste una bigezione $f:X\rightarrow Y$. In questo caso sii dice 
+che $X$ e $Y$ hanno la stessa cardinalit\`a.
+\subsection{Propriet\`a}
+Siano $X,Y$ e $Z$ tre insiemi, valgono le seguenti propriet\`a:
+\begin{itemize}
+\item $X$ \`e equipotente a s\`e stesso: $X\sim X$.
+\item Se $X$ \`e equipotente a $Y$ allora $Y$ \`e equipotente a $X$: $X\sim Y\Rightarrow Y\sim X$.
+\item Se $X$ \`e equipotente a $Y$ e $Y$ \`e equipotente a $Z$, allora $X$ \`e equipotente a $Z$: $(X\sim Y)\wedge_Y\sim Z)\Rightarrow X\sim Z$. 
+\end{itemize} 
+\subsubsection{Dimostrazioni}
+\begin{itemize}
+\item $X\sim X$: viene scelta l'identit\`a.
+\item $X\sim Y\Rightarrow Y\sim X$: se $f:X\rightarrow Y$ \`e una bigezione, allora $f^{-1}Y\rightarrow X$ \`e una bigezione, inoltre $(f^{-1})^{-1}=f$.
+\item $(X\sim Y)\wedge_Y\sim Z)\Rightarrow X\sim Z$: $\exists X\xrightarrow[\sim]{f}Y, Y\xrightarrow[\sim]{g}Z\Rightarrow g\circ f:X\xrightarrow[]{\sim} Z$
+\end{itemize}
+Pur essendo riflessiva, commutativa e transitiva non \`e una relazione di equivalenza in quanto non esiste l'insieme universo.
+\subsubsection{Idea di cardinalit\`a}
+Si pu\`u considerare una classe di insiemi detta cardinali caratterizzata dale seguenti propriet\`a:
+\begin{itemize}
+\item Comunque scelto un insieme $X,\exists$ un cardinale $\alpha$ tale che $X\sim\alpha$, ovvero ogni insieme $X$ \`e equipotente ad uno e un solo cardinale, denotato con $|X|$.
+\item Se $\alpha\neq\beta$ sono due cardinali distinti, $\alpha\not\sim\beta$, ovvero due cardinali distinti non sono equipotenti tra loro. 
+\end{itemize} 
+\section{Teorema}
+Siano $X$ e $Y$ due insiemi, allora $X\sim Y\Leftrightarrow|X|=|Y|$ (avere stessa cardinalit\`a).
+\subsection{Dimostrazione}
+\subsubsection{$\mathbf{X\sim Y\Rightarrow |X|=|Y|}$}
+Si supponga che $X\sim Y$, si osserva che esiste $f$ tale che $X\xrightarrow[f]{\sim}Y$. Siano $k=|X|$ e $\lambda=|Y|$, e siano $g:X\rightarrow k$ e $h:Y\rightarrow\lambda$ delle 
+bigezioni, allora $h^{-1}\circ f\circ g^{-1}:k\rightarrow\lambda$ \`e una bigezione e pertanto $k=\lambda$.
+\subsubsection{$\mathbf{|X|=|Y|\Rightarrow X\sim Y}$}
+Se $k=|X|=|Y|$ allora esistono due bigezioni $f:X\rightarrow k$ e $g:Y\rightarrow k$, \`e stato precedentemente dimostrato che $g^{-1}\circ f:X\rightarrow Y$ \`e una bigezione e 
+perci\`o $X\sim Y$.
